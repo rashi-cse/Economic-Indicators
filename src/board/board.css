@@ -46,11 +46,29 @@
 
 /* Tricolour strip */
 .eb-flag {
+  position: relative;
   grid-column: 1 / -1;
   height: 8px;
   background: linear-gradient(90deg, var(--eb-saffron) 0 33.34%, #ffffff 33.34% 66.67%, var(--eb-flag-green) 66.67% 100%);
   box-shadow: inset 0 -1px 0 var(--eb-rule), inset 0 1px 0 var(--eb-rule);
   border-bottom: 1px solid var(--eb-rule);
+}
+.eb-flag::after {
+  content: "☸";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border: 2px solid #06038d;
+  border-radius: 50%;
+  background: #fff;
+  color: #06038d;
+  font: 700 15px/1 var(--eb-font);
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 0.8);
 }
 
 /* Left rail */
@@ -292,7 +310,26 @@
 .eb-tile-change { font-size: 13px; }
 .eb-tile-period { font-size: 12px; color: var(--eb-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.eb-panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.eb-panels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.eb-chart-group {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--eb-card-line);
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--eb-panel-soft), var(--eb-paper));
+}
+.eb-chart-group-head {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 0 2px 2px;
+}
+.eb-chart-group-head h3 { margin: 0; color: var(--eb-navy); font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
+.eb-chart-group-head p { margin: 0; color: var(--eb-muted); font-size: 13px; }
 .eb-mc { margin: 0; padding: 12px 14px 6px; border: 1px solid var(--eb-rule); border-radius: 8px; background: var(--eb-paper); min-width: 0; position: relative; }
 .eb-mc figcaption { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; row-gap: 2px; margin-bottom: 4px; }
 .eb-mc-title { font-family: var(--eb-serif); font-size: 17px; margin: 0; color: var(--eb-navy); }
@@ -331,9 +368,11 @@
 @media (max-width: 1280px) {
   .eb-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .eb-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eb-chart-group { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
   .eb-panels { grid-template-columns: minmax(0, 1fr); }
+  .eb-chart-group { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   .eb-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
@@ -402,7 +441,7 @@
 .eb-dash .eb-chip.eb-neutral { background: var(--eb-neutral-bg); color: var(--eb-neutral-ink); }
 
 /* Chart cards */
-.eb-mc { padding: 14px 16px 8px; }
+.eb-mc { padding: 10px 12px 5px; }
 .eb-mc figcaption { position: relative; padding-right: 0; }
 .eb-mc-title { font-size: 16.5px; }
 .eb-mc-head { order: 2; margin: 0 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; line-height: 1.15; text-align: right; }
@@ -528,8 +567,14 @@
 .eb-icon { display: block; }
 
 /* lift on hover for chart cards too */
-.eb-mc { transition: box-shadow 0.18s ease, transform 0.18s ease; }
-.eb-mc:hover { box-shadow: 0 2px 4px rgb(15 33 71 / 0.06), 0 14px 28px -14px rgb(15 33 71 / 0.28); }
+.eb-mc { transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s linear 0.2s; }
+.eb-mc:hover, .eb-mc:focus-within {
+  z-index: 5;
+  transform: scale(1.035);
+  box-shadow: 0 8px 18px rgb(15 33 71 / 0.12), 0 24px 42px -18px rgb(15 33 71 / 0.35);
+}
+.eb-chart-group .eb-mc { box-shadow: 0 1px 2px rgb(15 33 71 / 0.04), 0 5px 12px -8px rgb(15 33 71 / 0.12); }
+.eb-chart-group .eb-mc:hover, .eb-chart-group .eb-mc:focus-within { transform: scale(1.045); }
 
 /* header art */
 .eb-hero > *:not(.eb-hero-art) { position: relative; z-index: 1; }
@@ -569,7 +614,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .eb-draw, .eb-grow, .eb-fadein, .eb-tile, .eb-mc, .eb-new, .eb-hero, .eb-skel-hero, .eb-skel-tile, .eb-skel-panel { animation: none !important; }
-  .eb-tile:hover, .eb-mc:hover { transform: none; }
+  .eb-tile:hover, .eb-mc:hover, .eb-mc:focus-within { transform: none; }
 }
 @media print {
   .eb-hero-art { display: none; }

@@ -168,6 +168,11 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
 
       <h2 className="eb-eyebrow" id="eb-panels-h">Trends</h2>
       <section className="eb-panels" aria-labelledby="eb-panels-h">
+        <div className="eb-chart-group eb-chart-group-growth">
+          <div className="eb-chart-group-head">
+            <h3>Growth and prices</h3>
+            <p>Output, inflation, capacity and household expectations</p>
+          </div>
         {has('gdp') && (
           <MultiChart title="Growth, real and nominal" icon="growth" headline={head('gdp')} note="% year on year, by quarter. Deflator: the inflation that turns real into nominal growth. MoSPI." kind="bar" start={start} fmt={pct(1)}
             series={[
@@ -211,6 +216,12 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
               { key: 'cpi_urban', label: 'Urban', color: S2, points: h('cpi_urban') },
             ]} />
         )}
+        </div>
+        <div className="eb-chart-group eb-chart-group-money">
+          <div className="eb-chart-group-head">
+            <h3>Money and credit</h3>
+            <p>Rates, liquidity and lending conditions</p>
+          </div>
         {has('tbill_91', 'gsec10') && (
           <MultiChart title="Interest rates" icon="rates" headline={head('gsec10')} note="%, month end. RBI DBIE (G-sec: FBIL)." start={start} fmt={pct(2)}
             series={[
@@ -246,6 +257,12 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
               { key: 'credit_personal', label: 'Personal loans', color: S3, points: h('credit_personal') },
             ]} />
         )}
+        </div>
+        <div className="eb-chart-group eb-chart-group-fiscal">
+          <div className="eb-chart-group-head">
+            <h3>Fiscal and tax</h3>
+            <p>Public finances, direct taxes and the tax base</p>
+          </div>
         {has('dt_corporate', 'dt_noncorporate') && (
           <MultiChart title="Direct tax collections" icon="money" headline={head('dt_net')} note="Net of refunds, ₹ lakh crore, by financial year (bars at March, year end). Non-corporate is mainly personal income tax. Latest year provisional. Always about ten years. CBDT." kind="bar" start={annualStart} fmt={lakhCr}
             series={[
@@ -271,6 +288,12 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
               { key: 'capex_centre', label: 'Capital spending', color: S1, points: h('capex_centre') },
             ]} />
         )}
+        </div>
+        <div className="eb-chart-group eb-chart-group-external">
+          <div className="eb-chart-group-head">
+            <h3>External sector and jobs</h3>
+            <p>Trade, capital flows, reserves and employment</p>
+          </div>
         {has('exports', 'imports') && (
           <MultiChart title="Merchandise trade" icon="trade" headline={head('trade_balance')} note="US$ bn a month. RBI DBIE, latest month from Commerce." start={start} fmt={bn}
             series={[
@@ -318,6 +341,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
           <MultiChart title="Rupee per US dollar" icon="rupee" headline={head('inr_usd')} note="RBI reference rate, month end. A higher number means a weaker rupee. RBI DBIE." start={start} fmt={(v) => `₹${formatValue(v, 2)}`}
             series={[{ key: 'inr_usd', label: 'Rupee per US$', color: S1, points: h('inr_usd') }]} />
         )}
+        </div>
       </section>
 
       <section aria-labelledby="eb-signal-h">
