@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import Icon from './Icon.jsx';
 import { smoothPath } from './motion.js';
 import useWidth from '../useWidth.js';
@@ -21,17 +21,31 @@ export function sinceRange(points, start) {
 
 export default function MultiChart({ title, icon, note, series, kind = 'line', band, start, fmt, headline, height = 156 }) {
   const [ref, W] = useWidth(360, 220);
+  const [modalRef, modalW] = useWidth(960, 420);
   const [hover, setHover] = useState(null);
+  const [expanded, setExpanded] = useState(false);
   const gid = useId().replace(/:/g, '');
   const live = series.map((s) => ({ ...s, pts: sinceRange(s.points, start) })).filter((s) => s.pts.length);
 
-  const body = () => {
+  useEffect(() => {
+    if (!expanded) return undefined;
+    const onKey = (e) => { if (e.key === 'Escape') setExpanded(false); };
+    document.addEventListener('keydown', onKey);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [expanded]);
+
+  const body = (chartWidth) => {
     if (!live.length || live.every((s) => s.pts.length < 2)) {
       return <p className="eb-empty">Not enough data in this period. Choose a longer range above.</p>;
     }
     const H = height;
     const right = kind === 'line' ? M.right : 12;
-    const plotW = W - M.left - right;
+    const plotW = chartWidth - M.left - right;
     const plotH = H - M.top - M.bottom;
     const all = live.flatMap((s) => s.pts);
     const dates = [...new Set(all.map((p) => monthKey(p.date)))].sort();
@@ -77,7 +91,7 @@ export default function MultiChart({ title, icon, note, series, kind = 'line', b
 
     const onMove = (e) => {
       const r = e.currentTarget.getBoundingClientRect();
-      const mx = ((e.clientX - r.left) / r.width) * W;
+      const mx = ((e.clientX - r.left) / r.width) * chartWidth;
       let best = dates[0];
       let bestD = Infinity;
       for (const key of dates) {
@@ -106,7 +120,7 @@ export default function MultiChart({ title, icon, note, series, kind = 'line', b
 
     return (
       <div className="eb-mc-plot">
-        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}. ${note || ''}`}
+        <svg width={chartWidth} height={H} viewBox={`0 0 ${chartWidth} ${H}`} role="img" aria-label={`${title}. ${note || ''}`}
           onPointerMove={onMove} onPointerLeave={() => setHover(null)}>
           {band && (
             <g>
@@ -177,7 +191,7 @@ export default function MultiChart({ title, icon, note, series, kind = 'line', b
           )}
         </svg>
         {hover && (
-          <div className="eb-tip eb-mc-tip" style={{ left: Math.min(Math.max(hx - 80, 0), Math.max(0, W - 170)), top: 4 }}>
+          <div className="eb-tip eb-mc-tip" style={{ left: Math.min(Math.max(hx - 80, 0), Math.max(0, chartWidth - 170)), top: 4 }}>
             <span>{MON[Number(hover.slice(5)) - 1]} {hover.slice(0, 4)}</span>
             {live.map((s) => {
               const p = at(s, hover);
@@ -194,9 +208,11 @@ export default function MultiChart({ title, icon, note, series, kind = 'line', b
   };
 
   return (
-    <figure className="eb-mc">
+    <figure className={`eb-mc${expanded ? ' eb-mc-is-expanded' : ''}`}
+      onClick={(e) => { if (e.target.closest('svg')) setExpanded(true); }}>
       <figcaption>
         <h3 className="eb-mc-title">{icon && <span className="eb-badge"><Icon name={icon} size={16} /></span>}{title}</h3>
+        <button type="button" className="eb-mc-expand" onClick={() => setExpanded(true)} aria-label={`Expand ${title} chart`}>Expand</button>
         {headline && (
           <p className="eb-mc-head"><b>{headline.value}</b><span>{headline.sub}</span></p>
         )}
@@ -207,7 +223,18 @@ export default function MultiChart({ title, icon, note, series, kind = 'line', b
           </ul>
         )}
       </figcaption>
-      <div ref={ref}>{body()}</div>
+      <div ref={ref}>{body(W)}</div>
+      {expanded && (
+        <div className="eb-chart-modal" role="dialog" aria-modal="true" aria-labelledby={`${gid}-modal-title`}>
+          <div className="eb-chart-modal-card">
+            <div className="eb-chart-modal-head">
+              <h2 id={`${gid}-modal-title`}>{title}</h2>
+              <button type="button" onClick={() => setExpanded(false)} aria-label="Close expanded chart">Close</button>
+            </div>
+            <div ref={modalRef} className="eb-chart-modal-chart">{body(modalW)}</div>
+          </div>
+        </div>
+      )}
     </figure>
   );
 }
