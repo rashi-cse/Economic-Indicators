@@ -20,9 +20,9 @@ function RuralUrban({ byId }) {
     <section className="eb-section" aria-labelledby="eb-in-ru">
       <h2 id="eb-in-ru">Rural and urban inflation</h2>
       <p className="eb-ru-lead">
-        In {r.period} prices rose <strong>{pct(r.value)}</strong> in rural India and <strong>{pct(u.value)}</strong> in urban India,
-        so inflation was <strong>{formatValue(Math.abs(gap), 2)} points {gap >= 0 ? 'higher in villages' : 'higher in towns'}</strong>.
-        {' '}Rural inflation has been above urban in {higher} of the last {last12.length} months.
+        In {r.period}, rural and urban inflation stood at <strong>{pct(r.value)}</strong> and <strong>{pct(u.value)}</strong>, respectively;
+        inflation was therefore <strong>{formatValue(Math.abs(gap), 2)} percentage points higher in {gap >= 0 ? 'rural' : 'urban'} areas</strong>.
+        {' '}Rural inflation exceeded urban inflation in {higher} of the last {last12.length} months.
       </p>
       <MultiChart title="Rural and urban CPI inflation" icon="prices" headline={{ value: `${gap >= 0 ? '+' : '−'}${formatValue(Math.abs(gap), 2)} pts`, sub: `Rural minus urban · ${r.period}` }}
         note="% year on year, All India. 2024 base from January 2026; 2012 base before. Shaded: RBI's 2 to 6% tolerance band. MoSPI."
@@ -40,7 +40,7 @@ export default function IndicatorPage({ item, byId }) {
     return (
       <div className="eb-notfound">
         <h1>Indicator not found</h1>
-        <p>This indicator is not in the current data. <a href="#/">Return to the overview</a> to pick one.</p>
+        <p>This indicator is not included in the current data set. <a href="#/">Return to the overview</a> to select another indicator.</p>
       </div>
     );
   }
@@ -79,7 +79,7 @@ export default function IndicatorPage({ item, byId }) {
 
       {['cpi', 'cpi_rural', 'cpi_urban'].includes(item.id) && <RuralUrban byId={byId} />}
       {item.mode === 'cbdt' && (
-        <p className="eb-ru-lead">Part of the <a href="#/direct-taxes">Direct taxes</a> section, with collections by mode of payment, taxpayers by category and the state-wise table.</p>
+        <p className="eb-ru-lead">This indicator is presented in the <a href="#/direct-taxes">Direct taxes</a> section, which includes collections by payment mode, taxpayers by category and the state-wise table.</p>
       )}
 
       <section className="eb-section" aria-labelledby="eb-in-hist">
@@ -107,22 +107,22 @@ export default function IndicatorPage({ item, byId }) {
         <h2 id="eb-in-about">About this figure</h2>
         <dl className="eb-facts">
           <div><dt>Source</dt><dd>{item.source_url ? <a href={item.source_url} target="_blank" rel="noreferrer">{item.source}</a> : item.source}</dd></div>
-          <div><dt>Released</dt><dd>{item.released ? formatDate(item.released) : 'Updated whenever the data is rebuilt'}</dd></div>
+          <div><dt>Released</dt><dd>{item.released ? formatDate(item.released) : 'Updated whenever the data set is rebuilt'}</dd></div>
           <div><dt>How it gets here</dt><dd>{item.mode === 'live'
-            ? (item.stale ? 'Pulled from MoSPI. The last attempt failed, so this is the last good copy.' : 'Pulled live from MoSPI each time the data is rebuilt.')
+            ? (item.stale ? 'Retrieved from MoSPI. The most recent retrieval attempt was unsuccessful; the figure shown is therefore the last successfully retrieved value.' : 'Retrieved live from MoSPI each time the data set is rebuilt.')
             : item.mode === 'rbi'
-              ? "Read from RBI's DBIE Macro-economic Indicators download (data/rbi/macro-indicators.xlsx) or RBI's press releases, refreshed daily."
+              ? "Retrieved from the RBI DBIE Macro-economic Indicators download (data/rbi/macro-indicators.xlsx) or from RBI press releases, with daily refreshes."
               : item.mode === 'ppac'
-              ? "Read daily from PPAC's crude oil price page (scripts/ppac_crude.py)."
+              ? "Retrieved daily from PPAC's crude-oil price page by scripts/ppac_crude.py."
               : item.mode === 'gstn'
-              ? "Read from GSTN's monthly GST revenue report, found through the GST portal's news feed (scripts/gst_reports.py)."
+              ? "Retrieved from GSTN's monthly GST revenue report through the GST portal's news feed, using scripts/gst_reports.py."
               : item.mode === 'cbdt'
-              ? "From CBDT's annual Time Series Data PDF, saved in data/uploads/direct-taxes/ and read by scripts/direct_taxes.py. The Income Tax Department's site does not allow automated downloads, so each new edition is added by hand."
+              ? "Taken from CBDT's annual Time Series Data PDF, stored in data/uploads/direct-taxes/ and processed by scripts/direct_taxes.py. The Income Tax Department's website does not support automated downloads; each new edition must therefore be added manually."
               : item.mode === 'derived'
-              ? 'Calculated on the board from other series shown here; see the note.'
+              ? 'Calculated on the board from the other series shown here; see the accompanying note.'
               : item.mode === 'workbook'
-              ? "From the division's indicators workbook (data/uploads/india-economic-indicators.xlsx), compiled from official releases with each value cited."
-              : 'Entered by the team from the official release, in data/manual-indicators.csv. Earlier points may come from the RBI DBIE download.'}</dd></div>
+              ? "Taken from the division's indicators workbook (data/uploads/india-economic-indicators.xlsx), compiled from official releases with a citation for each value."
+              : 'Entered by the team from the official release in data/manual-indicators.csv. Earlier observations may originate from the RBI DBIE download.'}</dd></div>
           {item.note && <div><dt>Note</dt><dd>{item.note}</dd></div>}
           <div><dt>Unit</dt><dd>{item.unit}</dd></div>
         </dl>

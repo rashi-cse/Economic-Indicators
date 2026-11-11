@@ -1,8 +1,7 @@
 import { formatValue, signed } from './format.js';
 
-// Two sentences under each theme heading that tell a first-time reader what
-// the indicators say together. Written from the latest figures, so the words
-// change with the data; any figure that is missing is simply left out.
+// Formal analytical summaries under each theme heading. They are generated
+// from the latest figures; unavailable indicators are omitted.
 
 const f = (v, d = 1) => signed(formatValue(v, d));
 const pct = (i, d = 1) => (i ? <strong>{f(i.value, d)}%</strong> : null);
@@ -19,11 +18,11 @@ function growth(b) {
   const { gdp, iip, pmi_mfg: pm, pmi_services: ps, cpi, wpi, cpi_rural: cr, cpi_urban: cu, unemployment: ur, cpi_core: core, crude_basket: oil, gdp_nominal: gn,
     infl_exp_1y: ie, capacity_util_sa: cusa, capacity_util: cuRaw } = b;
   const cap = cusa || cuRaw;
-  const expanding = pm && ps ? (pm.value > 50 && ps.value > 50 ? 'both above 50, so activity is expanding' : 'one or both below 50, so activity is slowing') : null;
+  const expanding = pm && ps ? (pm.value > 50 && ps.value > 50 ? 'both above 50, indicating expansion in activity' : 'one or both below 50, indicating a moderation in activity') : null;
   const s1 = gdp && (
     <>
-      The economy grew {pct(gdp)} in {gdp.period}{gn ? <> ({pct(gn)} before adjusting for inflation)</> : null}
-      {iip ? <>, industrial output rose {pct(iip)} in {iip.period}</> : null}
+      Real GDP recorded growth of {pct(gdp)} in {gdp.period}{gn ? <> ({pct(gn)} at current prices, before adjustment for inflation)</> : null}
+      {iip ? <>, while industrial output increased by {pct(iip)} in {iip.period}</> : null}
       {expanding ? <>, and the business surveys (PMIs) are {expanding} (manufacturing {formatValue(pm.value, 1)}, services {formatValue(ps.value, 1)})</> : null}
       {cap ? <>; factories were using <strong>{formatValue(cap.value, 1)}%</strong> of their capacity in {cap.period}{cap === cusa ? ' (seasonally adjusted)' : ''}</> : null}.
     </>
@@ -31,19 +30,19 @@ function growth(b) {
   const dir = cpi && cpi.change != null ? (cpi.change > 0 ? 'rising' : cpi.change < 0 ? 'easing' : 'steady') : null;
   const s2 = cpi && (
     <>
-      Retail (CPI) inflation is {dir ? `${dir} at ` : ''}{pct(cpi, 2)}
-      {core ? <> and core inflation (excluding food and fuel) {core.change > 0 ? 'climbing to' : 'at'} {pct(core, 2)}</> : null}
-      {wpi ? <>, with wholesale prices up {pct(wpi, 2)}{oil ? <> as Indian-basket crude {oil.period.includes('to date') ? 'averages' : 'averaged'} <strong>{'$' + formatValue(oil.value, 0)}</strong> a barrel ({oil.period.replace(' (to date)', ', month to date')})</> : null}{wpi.value > cpi.value ? ', a sign that more cost pressure may reach shoppers' : ''}</> : null}
-      {cr && cu ? <>; prices are rising faster in {cr.value >= cu.value ? 'villages' : 'towns'} ({cr.value >= cu.value ? `rural ${f(cr.value, 2)}% against urban ${f(cu.value, 2)}%` : `urban ${f(cu.value, 2)}% against rural ${f(cr.value, 2)}%`})</> : null}
-      {ur ? <>, while unemployment is {pct(ur)}</> : null}.
+      Consumer Price Index (CPI) inflation is {dir ? `${dir} at ` : ''}{pct(cpi, 2)}
+      {core ? <> and core inflation (excluding food and household fuel) is {core.change > 0 ? 'rising to' : 'at'} {pct(core, 2)}</> : null}
+      {wpi ? <>, while wholesale prices increased by {pct(wpi, 2)}{oil ? <>; the Indian crude basket {oil.period.includes('to date') ? 'averaged' : 'recorded an average price of'} <strong>{'$' + formatValue(oil.value, 0)}</strong> per barrel ({oil.period.replace(' (to date)', ', month to date')})</> : null}{wpi.value > cpi.value ? ', indicating the possibility of further cost pressures' : ''}</> : null}
+      {cr && cu ? <>; inflation was higher in {cr.value >= cu.value ? 'rural' : 'urban'} areas ({cr.value >= cu.value ? `rural ${f(cr.value, 2)}% compared with urban ${f(cu.value, 2)}%` : `urban ${f(cu.value, 2)}% compared with rural ${f(cr.value, 2)}%`})</> : null}
+      {ur ? <>, while unemployment stood at {pct(ur)}</> : null}.
     </>
   );
   const ieDir = ie && ie.change != null ? (ie.change > 0 ? 'up from' : ie.change < 0 ? 'down from' : 'the same as') : null;
   const s3 = ie && (
     <>
-      Households surveyed by RBI expect inflation of <strong>{formatValue(ie.value, 1)}%</strong> a year ahead ({ie.period} round)
+      In the RBI survey, households anticipated inflation of <strong>{formatValue(ie.value, 1)}%</strong> over the following year ({ie.period} round)
       {ieDir && ie.compare_value != null ? <>, {ieDir} {formatValue(ie.compare_value, 1)}% in the previous round</> : null}
-      ; their figures always run above measured inflation, so RBI watches the direction{ie.change > 0 ? ', and rising expectations can feed into wages and prices' : ''}.
+      ; these expectations have remained above measured inflation, and their direction is therefore monitored by the RBI{ie.change > 0 ? ', since rising expectations may influence wages and prices' : ''}.
     </>
   );
   return [s1, s2, s3];
@@ -54,20 +53,20 @@ function external(b) {
   const cover = tb && sv && tb.value < 0 && sv.period === tb.period ? Math.round((sv.value / -tb.value) * 100) : null;
   const s1 = tb && (
     <>
-      India ran a goods trade {tb.value < 0 ? 'deficit' : 'surplus'} of {bn(tb.value)} in {tb.period}
-      {cover != null ? <>, but a services surplus of {bn(sv.value)} covered about {cover}% of it</> : null}
-      {rem ? <>; with remittances of {bn(rem.value)} in {rem.period}</> : null}
-      {cad ? <>, the current account {cad.value < 0 ? 'deficit' : 'surplus'} was only <strong>{formatValue(Math.abs(cad.value), 1)}% of GDP</strong> ({cad.period})</> : null}.
+      India recorded a merchandise trade {tb.value < 0 ? 'deficit' : 'surplus'} of {bn(tb.value)} in {tb.period}
+      {cover != null ? <>, partly offset by a services surplus of {bn(sv.value)}</> : null}
+      {rem ? <>; remittance receipts amounted to {bn(rem.value)} in {rem.period}</> : null}
+      {cad ? <>, and the current-account {cad.value < 0 ? 'deficit' : 'surplus'} was equivalent to <strong>{formatValue(Math.abs(cad.value), 1)}% of GDP</strong> ({cad.period})</> : null}.
     </>
   );
   const ya = yearAgo(inr);
   const fall = inr && ya ? ((inr.value / ya.value - 1) * 100) : null;
   const s2 = inr && (
     <>
-      The rupee is at <strong>₹{formatValue(inr.value, 2)}</strong> per dollar
-      {fall != null ? <>, {Math.abs(fall).toFixed(1)}% {fall > 0 ? 'weaker' : 'stronger'} than a year ago</> : null}
-      {fx ? <>; forex reserves of {bn(fx.value)} are the buffer</> : null}
-      {fwd ? <>, while a 3-month forward premium of <strong>{formatValue(fwd.value, 2)}%</strong>{fwd.compare_value != null && fwd.value > fwd.compare_value ? ' and rising' : ''} points to continued pressure on the rupee</> : null}.
+      The Indian rupee stood at <strong>₹{formatValue(inr.value, 2)}</strong> per US dollar
+      {fall != null ? <>, {Math.abs(fall).toFixed(1)}% {fall > 0 ? 'weaker' : 'stronger'} than a year earlier</> : null}
+      {fx ? <>; foreign-exchange reserves of {bn(fx.value)} provide a buffer</> : null}
+      {fwd ? <>, while a three-month forward premium of <strong>{formatValue(fwd.value, 2)}%</strong>{fwd.compare_value != null && fwd.value > fwd.compare_value ? ' and increasing' : ''} indicates continuing pressure on the rupee</> : null}.
     </>
   );
   return [s1, s2];
@@ -144,7 +143,7 @@ export default function ThemeBrief({ group, byId }) {
   if (!lines.length) return null;
   return (
     <div className="eb-themebrief">
-      <p className="eb-themebrief-kicker">What these figures say together</p>
+      <p className="eb-themebrief-kicker">Analytical summary of the latest figures</p>
       {lines.map((l, i) => <p key={i}>{l}</p>)}
     </div>
   );

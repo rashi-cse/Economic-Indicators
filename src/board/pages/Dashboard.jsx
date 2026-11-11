@@ -24,7 +24,7 @@ const bn = (v) => `${signed(formatValue(v, 1))} bn`;
 const lakhCr = (v) => `₹${formatValue(v, 1)} lakh cr`;
 
 const NEW_DAYS = 10;
-const TILE_LABEL = { gdp: 'Real GDP growth', cpi: 'CPI inflation', wpi: 'WPI inflation', repo: 'Repo rate', unemployment: 'Unemployment', credit_nonfood: 'Bank credit growth' };
+const TILE_LABEL = { gdp: 'Real GDP growth', cpi: 'CPI inflation', wpi: 'Wholesale price inflation', repo: 'Policy repo rate', unemployment: 'Unemployment rate', credit_nonfood: 'Non-food bank credit growth' };
 const TILE_ICON = { gdp: 'growth', cpi: 'prices', wpi: 'wholesale', repo: 'rates', unemployment: 'jobs', credit_nonfood: 'credit' };
 
 function CountUp({ value, decimals }) {
@@ -57,11 +57,11 @@ function TradeCard({ base }) {
     <section className="eb-xcard" aria-labelledby="eb-xcard-t">
       <span className="eb-xcard-icon" aria-hidden="true"><Icon name="trade" size={24} /></span>
       <span>
-        <span className="eb-xcard-kicker">Merchandise trade · DGCI&amp;S, HS 8-digit by country</span>
-        <span className="eb-xcard-title" id="eb-xcard-t">Merchandise exports, imports and balance by partner</span>
+        <span className="eb-xcard-kicker">Merchandise trade · DGCI&amp;S, HS 8-digit data by country</span>
+        <span className="eb-xcard-title" id="eb-xcard-t">Merchandise exports, imports and trade balance by partner</span>
         <span className="eb-xcard-text">
-          {yr ? `${yr}: exports ${money(X)}, imports ${money(M)}, deficit ${money(M - X)}. Every partner country and the top 300 products each way.`
-            : 'Every partner country and the top 300 products each way, 2021 to 2026.'}
+          {yr ? `${yr}: exports ${money(X)}, imports ${money(M)}, and a trade deficit of ${money(M - X)}. Coverage includes every partner country and the 300 highest-value products in each direction.`
+            : 'Coverage includes every partner country and the 300 highest-value products in each direction, for 2021 to 2026.'}
         </span>
       </span>
       <span className="eb-xcard-links">
@@ -82,7 +82,7 @@ function WhatsNew({ indicators, now }) {
     <section className="eb-new" aria-labelledby="eb-new-h">
       <h2 className="eb-new-h" id="eb-new-h">New on the board <span>last {NEW_DAYS} days</span></h2>
       {fresh.length === 0 ? (
-        <p className="eb-new-none">No new releases in the last {NEW_DAYS} days. Figures refresh daily at 6 pm IST.</p>
+        <p className="eb-new-none">No new releases have been recorded during the last {NEW_DAYS} days. Figures are refreshed daily at 6 pm IST.</p>
       ) : (
         <ul>
           {fresh.slice(0, 8).map((i) => (
@@ -95,7 +95,7 @@ function WhatsNew({ indicators, now }) {
               <Chip item={i} />
             </li>
           ))}
-          {fresh.length > 8 && <li className="eb-new-more">and {fresh.length - 8} more in the table below</li>}
+          {fresh.length > 8 && <li className="eb-new-more">{fresh.length - 8} additional indicators are listed in the table below.</li>}
         </ul>
       )}
     </section>
@@ -174,7 +174,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             <p>Output, inflation, capacity and household expectations</p>
           </div>
         {has('gdp') && (
-          <MultiChart title="Growth, real and nominal" icon="growth" headline={head('gdp')} note="% year on year, by quarter. Deflator: the inflation that turns real into nominal growth. MoSPI." kind="bar" start={start} fmt={pct(1)}
+          <MultiChart title="Real and nominal GDP growth" icon="growth" headline={head('gdp')} note="Year-on-year percentage change by quarter. The GDP deflator measures the price change used to distinguish nominal from real growth. MoSPI." kind="bar" start={start} fmt={pct(1)}
             series={[
               { key: 'gdp', label: 'Real GDP', color: S1, points: h('gdp') },
               { key: 'gdp_nominal', label: 'Nominal GDP', color: S2, points: h('gdp_nominal') },
@@ -182,7 +182,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('cpi') && (
-          <MultiChart title="Inflation" icon="prices" headline={head('cpi')} note="% year on year. Core excludes food and household fuel (computed from MoSPI indices and weights). Shaded: RBI's 2 to 6% band. MoSPI." start={start} fmt={pct(2)}
+          <MultiChart title="Consumer and wholesale price inflation" icon="prices" headline={head('cpi')} note="Year-on-year percentage change. Core inflation excludes food and household fuel and is calculated from MoSPI indices and weights. Shaded area: RBI's 2–6% tolerance band. MoSPI." start={start} fmt={pct(2)}
             band={{ lo: 2, hi: 6, label: '2–6% band' }}
             series={[
               { key: 'cpi', label: 'CPI', color: S1, points: h('cpi') },
@@ -191,7 +191,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('infl_exp_1y', 'cpi') && (
-          <MultiChart title="Inflation: what households expect" icon="prices" headline={head('infl_exp_1y')} note="Median % from RBI's bi-monthly survey of urban households in 19 cities, against measured CPI inflation. Households' numbers run above CPI; their direction is the signal. RBI, MoSPI." start={start} fmt={pct(1)}
+          <MultiChart title="Household inflation expectations" icon="prices" headline={head('infl_exp_1y')} note="Median expected inflation from the RBI's bi-monthly survey of urban households in 19 cities, compared with measured CPI inflation. The direction of expectations is an important indicator for monetary policy. RBI and MoSPI." start={start} fmt={pct(1)}
             series={[
               { key: 'infl_exp_1y', label: 'Expected, a year ahead', color: S1, points: h('infl_exp_1y') },
               { key: 'infl_perception', label: 'Perceived now', color: S2, points: h('infl_perception') },
@@ -199,18 +199,18 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('crude_basket') && (
-          <MultiChart title="Oil price" icon="wholesale" headline={head('crude_basket')} note="Indian basket crude, US$ a barrel, monthly average (latest month to date). PPAC publishes no monthly figures for 2022-23. PPAC." start={start} fmt={(v) => '$' + formatValue(v, 0)}
+          <MultiChart title="Indian crude oil basket price" icon="wholesale" headline={head('crude_basket')} note="Monthly average price of the Indian crude oil basket, in US dollars per barrel; the latest observation may represent the month to date. PPAC has not published monthly figures for 2022–23. PPAC." start={start} fmt={(v) => '$' + formatValue(v, 0)}
             series={[{ key: 'crude_basket', label: 'Indian basket crude', color: S1, points: h('crude_basket') }]} />
         )}
         {has('real_repo', 'real_gsec10') && (
-          <MultiChart title="Real interest rates" icon="rates" headline={head('real_repo')} note="Policy repo rate and 10-year G-sec yield minus CPI inflation, month end. Below zero means borrowing is cheap after inflation. RBI, MoSPI." start={start} fmt={pct(1)}
+          <MultiChart title="Real interest rates" icon="rates" headline={head('real_repo')} note="Policy repo rate and 10-year government security yield less CPI inflation, measured at month-end. A negative value indicates that the nominal rate is below inflation. RBI and MoSPI." start={start} fmt={pct(1)}
             series={[
               { key: 'real_repo', label: 'Real repo rate', color: S1, points: h('real_repo') },
               { key: 'real_gsec10', label: 'Real 10-year yield', color: S2, points: h('real_gsec10') },
             ]} />
         )}
         {has('cpi_rural', 'cpi_urban') && (
-          <MultiChart title="Rural and urban inflation" icon="prices" headline={head('cpi_rural')} note="CPI, % year on year, All India. 2024 base from January 2026, 2012 base before. MoSPI." start={start} fmt={pct(2)}
+          <MultiChart title="Rural and urban inflation" icon="prices" headline={head('cpi_rural')} note="All-India CPI inflation, measured year on year. The 2024 base applies from January 2026; the 2012 base applies to earlier observations. MoSPI." start={start} fmt={pct(2)}
             series={[
               { key: 'cpi_rural', label: 'Rural', color: S1, points: h('cpi_rural') },
               { key: 'cpi_urban', label: 'Urban', color: S2, points: h('cpi_urban') },
@@ -223,7 +223,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             <p>Rates, liquidity and lending conditions</p>
           </div>
         {has('tbill_91', 'gsec10') && (
-          <MultiChart title="Interest rates" icon="rates" headline={head('gsec10')} note="%, month end. RBI DBIE (G-sec: FBIL)." start={start} fmt={pct(2)}
+          <MultiChart title="Interest rates" icon="rates" headline={head('gsec10')} note="Percentage rates observed at month-end. RBI DBIE; government-security yields from FBIL." start={start} fmt={pct(2)}
             series={[
               { key: 'tbill_91', label: '91-day T-bill', color: S1, points: h('tbill_91') },
               { key: 'repo', label: 'Repo rate', color: S2, points: h('repo') },
@@ -231,7 +231,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('credit_nonfood', 'deposit_growth', 'm3_growth') && (
-          <MultiChart title="Money and credit" icon="money" headline={head('credit_nonfood')} note="% year on year. RBI DBIE." start={start} fmt={pct(1)}
+          <MultiChart title="Money and credit" icon="money" headline={head('credit_nonfood')} note="Year-on-year percentage change in non-food credit, deposits and broad money (M3). RBI DBIE." start={start} fmt={pct(1)}
             series={[
               { key: 'credit_nonfood', label: 'Non-food credit', color: S1, points: h('credit_nonfood') },
               { key: 'deposit_growth', label: 'Deposits', color: S2, points: h('deposit_growth') },
@@ -239,18 +239,18 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('iip') && (
-          <MultiChart title="Industrial output" icon="wholesale" headline={head('iip')} note="IIP, % year on year, base 2022-23. MoSPI has not published June 2023 to March 2024 on this base. MoSPI." kind="bar" start={start} fmt={pct(1)}
+          <MultiChart title="Industrial output" icon="wholesale" headline={head('iip')} note="Index of Industrial Production (IIP), year-on-year percentage change, with 2022–23 as the base year. MoSPI has not published observations for June 2023 to March 2024 on this base. MoSPI." kind="bar" start={start} fmt={pct(1)}
             series={[{ key: 'iip', label: 'IIP growth', color: S1, points: h('iip') }]} />
         )}
         {has('capacity_util') && (
-          <MultiChart title="Factory capacity in use" icon="wholesale" headline={head('capacity_util_sa') || head('capacity_util')} note="Capacity utilisation in manufacturing, %, by quarter, about 1,000 companies. The unadjusted figure peaks every January to March. RBI OBICUS." start={start} fmt={pct(1)}
+          <MultiChart title="Manufacturing capacity utilisation" icon="wholesale" headline={head('capacity_util_sa') || head('capacity_util')} note="Manufacturing capacity utilisation, reported quarterly for approximately 1,000 companies. The unadjusted series typically peaks during January–March. RBI OBICUS." start={start} fmt={pct(1)}
             series={[
               { key: 'capacity_util', label: 'As reported', color: S1, points: h('capacity_util') },
               { key: 'capacity_util_sa', label: 'Seasonally adjusted', color: S2, points: h('capacity_util_sa') },
             ]} />
         )}
         {has('credit_industry', 'credit_services') && (
-          <MultiChart title="Credit by sector" icon="credit" headline={head('credit_services')} note="% year on year, as first published each month. RBI sectoral deployment of bank credit." start={start} fmt={pct(1)}
+          <MultiChart title="Credit by sector" icon="credit" headline={head('credit_services')} note="Year-on-year percentage change, based on the first release published each month. RBI sectoral deployment of bank credit." start={start} fmt={pct(1)}
             series={[
               { key: 'credit_industry', label: 'Industry', color: S1, points: h('credit_industry') },
               { key: 'credit_services', label: 'Services', color: S2, points: h('credit_services') },
@@ -264,25 +264,25 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             <p>Public finances, direct taxes and the tax base</p>
           </div>
         {has('dt_corporate', 'dt_noncorporate') && (
-          <MultiChart title="Direct tax collections" icon="money" headline={head('dt_net')} note="Net of refunds, ₹ lakh crore, by financial year (bars at March, year end). Non-corporate is mainly personal income tax. Latest year provisional. Always about ten years. CBDT." kind="bar" start={annualStart} fmt={lakhCr}
+          <MultiChart title="Direct tax collections" icon="money" headline={head('dt_net')} note="Net collections after refunds, in ₹ lakh crore, by financial year; bars are plotted at March, the financial-year end. Non-corporate tax consists primarily of personal income tax. The latest year is provisional. CBDT." kind="bar" start={annualStart} fmt={lakhCr}
             series={[
               { key: 'dt_corporate', label: 'Corporate tax', color: S1, points: h('dt_corporate') },
               { key: 'dt_noncorporate', label: 'Non-corporate tax', color: S2, points: h('dt_noncorporate') },
             ]} />
         )}
         {has('dt_gdp') && (
-          <MultiChart title="Direct taxes as a share of GDP" icon="growth" headline={head('dt_gdp')} note="Net direct tax collections, % of GDP at current prices, by financial year. Always about ten years. CBDT, MoSPI." start={annualStart} fmt={pct(2)}
+          <MultiChart title="Direct taxes as a share of GDP" icon="growth" headline={head('dt_gdp')} note="Net direct-tax collections as a percentage of GDP at current prices, by financial year. CBDT and MoSPI." start={annualStart} fmt={pct(2)}
             series={[{ key: 'dt_gdp', label: 'Direct tax to GDP', color: S1, points: h('dt_gdp') }]} />
         )}
         {has('itr_filers', 'taxpayers') && (
-          <MultiChart title="The income-tax base" icon="jobs" headline={head('itr_filers')} note="Crore persons. Taxpayers include those with tax deducted at source who did not file a return; taxpayers are by assessment year. CBDT." start={annualStart} fmt={(v) => `${formatValue(v, 1)} cr`}
+          <MultiChart title="Income-tax taxpayer base" icon="jobs" headline={head('itr_filers')} note="Number of persons in crore. Taxpayers include persons subject to tax deducted at source who did not file a return; taxpayer counts are reported by assessment year. CBDT." start={annualStart} fmt={(v) => `${formatValue(v, 1)} cr`}
             series={[
               { key: 'taxpayers', label: 'Taxpayers', color: S1, points: h('taxpayers') },
               { key: 'itr_filers', label: 'Return filers', color: S2, points: h('itr_filers') },
             ]} />
         )}
         {has('fiscal_deficit', 'capex_centre') && (
-          <MultiChart title="Government finances" icon="money" headline={head('fiscal_deficit')} note="Centre, cumulative from April as % of the full-year budget estimate; resets each April. CGA." start={start} fmt={pct(0)}
+          <MultiChart title="Government finances" icon="money" headline={head('fiscal_deficit')} note="Central Government figures, accumulated from April and expressed as a percentage of the full-year budget estimate; the cumulative series resets each April. CGA." start={start} fmt={pct(0)}
             series={[
               { key: 'fiscal_deficit', label: 'Fiscal deficit', color: S2, points: h('fiscal_deficit') },
               { key: 'capex_centre', label: 'Capital spending', color: S1, points: h('capex_centre') },
@@ -291,11 +291,11 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
         </div>
         <div className="eb-chart-group eb-chart-group-external">
           <div className="eb-chart-group-head">
-            <h3>External sector and jobs</h3>
-            <p>Trade, capital flows, reserves and employment</p>
+            <h3>External sector and employment</h3>
+            <p>Trade, capital flows, reserves and labour-market conditions</p>
           </div>
         {has('exports', 'imports') && (
-          <MultiChart title="Merchandise trade" icon="trade" headline={head('trade_balance')} note="US$ bn a month. RBI DBIE, latest month from Commerce." start={start} fmt={bn}
+          <MultiChart title="Merchandise trade" icon="trade" headline={head('trade_balance')} note="Monthly values in US$ billion. RBI DBIE; the latest month is sourced from the Ministry of Commerce." start={start} fmt={bn}
             series={[
               { key: 'exports', label: 'Exports', color: S1, points: h('exports') },
               { key: 'imports', label: 'Imports', color: S2, points: h('imports') },
@@ -303,7 +303,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('services_exports', 'services_imports') && (
-          <MultiChart title="Services trade" icon="trade" headline={head('services_net')} note="US$ bn a month. The surplus offsets part of the goods deficit. RBI." start={start} fmt={bn}
+          <MultiChart title="Services trade" icon="trade" headline={head('services_net')} note="Monthly values in US$ billion. The services surplus offsets part of the merchandise trade deficit. RBI." start={start} fmt={bn}
             series={[
               { key: 'services_exports', label: 'Services exports', color: S1, points: h('services_exports') },
               { key: 'services_imports', label: 'Services imports', color: S2, points: h('services_imports') },
@@ -311,7 +311,7 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('ca_goods', 'ca_services') && (
-          <MultiChart title="Current account" icon="flows" headline={head('ca_usd')} note="US$ bn a quarter, net. Services and transfers (mostly remittances) cover most of the goods deficit. RBI balance of payments." kind="bar" start={start} fmt={bn}
+          <MultiChart title="Current account" icon="flows" headline={head('ca_usd')} note="Net quarterly values in US$ billion. Services and transfers, primarily remittances, finance a substantial portion of the merchandise trade deficit. RBI balance of payments." kind="bar" start={start} fmt={bn}
             series={[
               { key: 'ca_goods', label: 'Goods', color: S2, points: h('ca_goods') },
               { key: 'ca_services', label: 'Services', color: S1, points: h('ca_services') },
@@ -319,26 +319,26 @@ export default function Dashboard({ data, title, byId, groups, csvUrl, tradeBase
             ]} />
         )}
         {has('remittances') && (
-          <MultiChart title="Remittances" icon="money" headline={head('remittances')} note="US$ bn a quarter. Personal transfer receipts, mainly money sent home by Indians working abroad. RBI." kind="bar" start={start} fmt={bn}
+          <MultiChart title="Remittance receipts" icon="money" headline={head('remittances')} note="Quarterly personal-transfer receipts in US$ billion, consisting primarily of funds sent to India by Indians working abroad. RBI." kind="bar" start={start} fmt={bn}
             series={[{ key: 'remittances', label: 'Remittances', color: S1, points: h('remittances') }]} />
         )}
         {has('fdi_net', 'fpi_net') && (
-          <MultiChart title="Capital flows" icon="flows" headline={head('fdi_net')} note="US$ bn a month, net. RBI DBIE." kind="bar" start={start} fmt={bn}
+          <MultiChart title="Capital flows" icon="flows" headline={head('fdi_net')} note="Net monthly capital flows in US$ billion. RBI DBIE." kind="bar" start={start} fmt={bn}
             series={[
               { key: 'fdi_net', label: 'Net FDI', color: S1, points: h('fdi_net') },
               { key: 'fpi_net', label: 'Net portfolio', color: S2, points: h('fpi_net') },
             ]} />
         )}
         {has('unemployment') && (
-          <MultiChart title="Jobs" icon="jobs" headline={head('unemployment')} note="Unemployment rate, % of labour force, age 15+, monthly. MoSPI PLFS." start={start} fmt={pct(1)}
+          <MultiChart title="Unemployment" icon="jobs" headline={head('unemployment')} note="Monthly unemployment rate among persons aged 15 years and above, expressed as a percentage of the labour force. MoSPI PLFS." start={start} fmt={pct(1)}
             series={[{ key: 'unemployment', label: 'Unemployment rate', color: S1, points: h('unemployment') }]} />
         )}
         {has('fx_reserves') && (
-          <MultiChart title="Forex reserves" icon="reserves" headline={head('fx_reserves')} note="US$ bn, last week of each month; latest week shown. RBI DBIE." start={start} fmt={bn}
+          <MultiChart title="Foreign-exchange reserves" icon="reserves" headline={head('fx_reserves')} note="Reserves in US$ billion, measured during the final week of each month; the latest available week is shown. RBI DBIE." start={start} fmt={bn}
             series={[{ key: 'fx_reserves', label: 'Forex reserves', color: S1, points: h('fx_reserves') }]} />
         )}
         {has('inr_usd') && (
-          <MultiChart title="Rupee per US dollar" icon="rupee" headline={head('inr_usd')} note="RBI reference rate, month end. A higher number means a weaker rupee. RBI DBIE." start={start} fmt={(v) => `₹${formatValue(v, 2)}`}
+          <MultiChart title="Indian rupee per US dollar" icon="rupee" headline={head('inr_usd')} note="RBI reference rate at month-end. A higher value indicates a weaker rupee. RBI DBIE." start={start} fmt={(v) => `₹${formatValue(v, 2)}`}
             series={[{ key: 'inr_usd', label: 'Rupee per US$', color: S1, points: h('inr_usd') }]} />
         )}
         </div>
