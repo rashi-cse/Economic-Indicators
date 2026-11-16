@@ -579,6 +579,7 @@ wpi,WPI inflation,Growth and prices,Jun 2026,2026-06-30,9.97,% YoY,"MoSPI (Offic
 wpi,WPI inflation,Growth and prices,Jul 2026,2026-07-31,9.78,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi,WPI inflation,Growth and prices,Aug 2026,2026-08-31,9.92,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi,WPI inflation,Growth and prices,Sep 2026,2026-09-30,11.39,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
+wpi,WPI inflation,Growth and prices,Oct 2026,2026-10-31,12.29,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi_food,WPI food inflation,Growth and prices,Apr 2024,2024-04-30,6.53,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi_food,WPI food inflation,Growth and prices,May 2024,2024-05-31,7.28,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi_food,WPI food inflation,Growth and prices,Jun 2024,2024-06-30,7.77,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
@@ -607,8 +608,9 @@ wpi_food,WPI food inflation,Growth and prices,Apr 2026,2026-04-30,3.29,% YoY,"Mo
 wpi_food,WPI food inflation,Growth and prices,May 2026,2026-05-31,4.58,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi_food,WPI food inflation,Growth and prices,Jun 2026,2026-06-30,6.23,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi_food,WPI food inflation,Growth and prices,Jul 2026,2026-07-31,6.56,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
-wpi_food,WPI food inflation,Growth and prices,Aug 2026,2026-08-31,7.05,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
+wpi_food,WPI food inflation,Growth and prices,Aug 2026,2026-08-31,6.41,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 wpi_food,WPI food inflation,Growth and prices,Sep 2026,2026-09-30,8.66,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
+wpi_food,WPI food inflation,Growth and prices,Oct 2026,2026-10-31,8.58,% YoY,"MoSPI (Office of the Economic Adviser data), WPI base 2022-23"
 capacity_util,Capacity utilisation in manufacturing,Growth and prices,Q2 2018-19,2018-09-30,74.8,%,"RBI, Order Books, Inventories and Capacity Utilisation Survey (OBICUS, quarterly)"
 capacity_util,Capacity utilisation in manufacturing,Growth and prices,Q3 2018-19,2018-12-31,75.9,%,"RBI, Order Books, Inventories and Capacity Utilisation Survey (OBICUS, quarterly)"
 capacity_util,Capacity utilisation in manufacturing,Growth and prices,Q4 2018-19,2019-03-31,76.1,%,"RBI, Order Books, Inventories and Capacity Utilisation Survey (OBICUS, quarterly)"
@@ -726,7 +728,7 @@ crude_basket,Crude oil price (Indian basket),Growth and prices,Jul 2026,2026-07-
 crude_basket,Crude oil price (Indian basket),Growth and prices,Aug 2026,2026-08-31,90.19,US$ per barrel,"PPAC, Crude Oil FOB Price (Indian Basket)"
 crude_basket,Crude oil price (Indian basket),Growth and prices,Sep 2026,2026-09-30,116.09,US$ per barrel,"PPAC, Crude Oil FOB Price (Indian Basket)"
 crude_basket,Crude oil price (Indian basket),Growth and prices,Oct 2026,2026-10-31,119.91,US$ per barrel,"PPAC, Crude Oil FOB Price (Indian Basket)"
-crude_basket,Crude oil price (Indian basket),Growth and prices,Nov 2026 (to date),2026-11-30,96.44,US$ per barrel,"PPAC, Crude Oil FOB Price (Indian Basket)"
+crude_basket,Crude oil price (Indian basket),Growth and prices,Nov 2026 (to date),2026-11-30,96.19,US$ per barrel,"PPAC, Crude Oil FOB Price (Indian Basket)"
 crude_basket_inr,Crude oil price in rupees,Growth and prices,Nov 2021,2021-11-30,6055,₹ per barrel,PPAC Indian basket (US$) x RBI reference rate (month end)
 crude_basket_inr,Crude oil price in rupees,Growth and prices,Dec 2021,2021-12-31,5446,₹ per barrel,PPAC Indian basket (US$) x RBI reference rate (month end)
 crude_basket_inr,Crude oil price in rupees,Growth and prices,Jan 2022,2022-01-31,6347,₹ per barrel,PPAC Indian basket (US$) x RBI reference rate (month end)
@@ -792,6 +794,7 @@ unemployment,Unemployment rate,Growth and prices,Jun 2026,2026-06-30,5.5,%,"MoSP
 unemployment,Unemployment rate,Growth and prices,Jul 2026,2026-07-31,5.1,%,"MoSPI Periodic Labour Force Survey, monthly"
 unemployment,Unemployment rate,Growth and prices,Aug 2026,2026-08-31,5.0,%,"MoSPI Periodic Labour Force Survey, monthly"
 unemployment,Unemployment rate,Growth and prices,Sep 2026,2026-09-30,5.0,%,"MoSPI Periodic Labour Force Survey, monthly"
+unemployment,Unemployment rate,Growth and prices,Oct 2026,2026-10-31,4.9,%,"MoSPI Periodic Labour Force Survey, monthly"
 exports,Merchandise exports,External sector,Oct 2021,2021-10-31,35.7277,US$ bn,Ministry of Commerce & Industry
 exports,Merchandise exports,External sector,Nov 2021,2021-11-30,31.795,US$ bn,Ministry of Commerce & Industry
 exports,Merchandise exports,External sector,Dec 2021,2021-12-31,39.2702,US$ bn,Ministry of Commerce & Industry
