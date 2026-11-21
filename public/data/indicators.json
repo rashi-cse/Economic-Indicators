@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-20T20:39:06+00:00",
+ "generated_at": "2026-11-21T19:39:09+00:00",
  "sources": {
   "mospi": {
    "status": "ok",
-   "fetched_at": "2026-11-20T20:39:06+00:00",
+   "fetched_at": "2026-11-21T19:39:09+00:00",
    "message": null
   },
   "rbi": {
@@ -12,7 +12,7 @@
    "message": null,
    "skipped": [],
    "latest_reading": "2026-10-31",
-   "age_days": 20
+   "age_days": 21
   }
  },
  "indicators": [
