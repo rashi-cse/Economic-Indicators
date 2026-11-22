@@ -1,29 +1,29 @@
 {
- "generated_at": "2026-11-21T19:39:38+00:00",
+ "generated_at": "2026-11-22T19:55:40+00:00",
  "status": {
   "wgi": {
    "state": "ok",
-   "checked_at": "2026-11-21T19:39:38+00:00"
+   "checked_at": "2026-11-22T19:55:40+00:00"
   },
   "ibbi": {
    "state": "ok",
-   "checked_at": "2026-11-21T19:39:38+00:00"
+   "checked_at": "2026-11-22T19:55:40+00:00"
   },
   "njdg": {
    "state": "ok",
-   "checked_at": "2026-11-21T19:39:38+00:00"
+   "checked_at": "2026-11-22T19:55:40+00:00"
   },
   "grievances": {
    "state": "ok",
-   "checked_at": "2026-11-21T19:39:38+00:00"
+   "checked_at": "2026-11-22T19:55:40+00:00"
   },
   "msme": {
    "state": "ok",
-   "checked_at": "2026-11-21T19:39:38+00:00"
+   "checked_at": "2026-11-22T19:55:40+00:00"
   },
   "consultations": {
    "state": "ok",
-   "checked_at": "2026-11-21T19:39:38+00:00"
+   "checked_at": "2026-11-22T19:55:40+00:00"
   }
  },
  "wgi": {
@@ -1772,70 +1772,70 @@
  },
  "njdg": {
   "source": "National Judicial Data Grid (eCommittee, Supreme Court of India)",
-  "read_at": "2026-11-21T19:39:46+00:00",
+  "read_at": "2026-11-22T19:56:03+00:00",
   "levels": {
    "district": {
-    "civil": 11285868,
-    "criminal": 41361089,
-    "total": 52646957,
+    "civil": 11287586,
+    "criminal": 41343730,
+    "total": 52631316,
     "ages": [
      {
       "band": "Under 1 year",
-      "civil": 4849357,
-      "criminal": 17394666,
-      "total": 22244023
+      "civil": 4852997,
+      "criminal": 17391924,
+      "total": 22244921
      },
      {
       "band": "1 to 3 years",
-      "civil": 2645204,
-      "criminal": 8465894,
-      "total": 11111098
+      "civil": 2644310,
+      "criminal": 8458723,
+      "total": 11103033
      },
      {
       "band": "3 to 5 years",
-      "civil": 1451808,
-      "criminal": 5080821,
-      "total": 6532629
+      "civil": 1451364,
+      "criminal": 5077879,
+      "total": 6529243
      },
      {
       "band": "5 to 10 years",
-      "civil": 0,
-      "criminal": 0,
-      "total": 0
+      "civil": 1537783,
+      "criminal": 6546587,
+      "total": 8084370
      },
      {
       "band": "Over 10 years",
-      "civil": 801651,
-      "criminal": 3872488,
-      "total": 4674139
+      "civil": 801507,
+      "criminal": 3871497,
+      "total": 4673004
      }
     ],
-    "instituted_last_month": 2102826,
-    "disposed_last_month": 1589688,
+    "instituted_last_month": 2103349,
+    "disposed_last_month": 1591983,
     "source_url": "https://njdg.ecourts.gov.in/njdg_v3/"
    },
    "high_courts": {
-    "civil": 4542249,
-    "criminal": 2027463,
-    "total": 6569712,
+    "civil": 4542713,
+    "criminal": 2027667,
+    "total": 6570380,
     "ages": [
      {
       "band": "Under 1 year",
-      "civil": 1349293,
-      "criminal": 662899,
-      "total": 2012192
+      "civil": 1349760,
+      "criminal": 663107,
+      "total": 2012867
      },
      {
       "band": "1 to 3 years",
-      "civil": 794558,
-      "criminal": 345569,
-      "total": 1140127
+      "civil": 794557,
+      "criminal": 345568,
+      "total": 1140125
      },
      {
       "band": "3 to 5 years",
       "civil": 498999,
-      "criminal": 179532,
-      "total": 678531
+      "criminal": 179531,
+      "total": 678530
      },
      {
       "band": "5 to 10 years",
@@ -1845,13 +1845,13 @@
      },
      {
       "band": "Over 10 years",
-      "civil": 973515,
-      "criminal": 490757,
-      "total": 1464272
+      "civil": 973513,
+      "criminal": 490755,
+      "total": 1464268
      }
     ],
     "instituted_last_month": 221498,
-    "disposed_last_month": 191539,
+    "disposed_last_month": 191577,
     "source_url": "https://njdg.ecourts.gov.in/hcnjdg_v2/"
    }
   },
@@ -1926,6 +1926,11 @@
      "date": "2026-11-21",
      "total": 52646957,
      "over_10_years": 4674139
+    },
+    {
+     "date": "2026-11-22",
+     "total": 52631316,
+     "over_10_years": 4673004
     }
    ],
    "high_courts": [
@@ -1998,13 +2003,18 @@
      "date": "2026-11-21",
      "total": 6569712,
      "over_10_years": 1464272
+    },
+    {
+     "date": "2026-11-22",
+     "total": 6570380,
+     "over_10_years": 1464268
     }
    ]
   }
  },
  "grievances": {
   "from": "2026-01-01",
-  "to": "2026-11-21",
+  "to": "2026-11-22",
   "pending_bands": [
    "0 to 60 days",
    "60 to 180 days",
@@ -2013,24 +2023,24 @@
   ],
   "central": {
    "total": {
-    "received": 2139000,
-    "disposed": 2055176,
-    "pct_disposed": 96.08,
+    "received": 2143087,
+    "disposed": 2055845,
+    "pct_disposed": 95.93,
     "pending": [
-     73200,
-     9771,
-     853,
+     76347,
+     10017,
+     878,
      0
     ]
    },
    "orgs": [
     {
      "name": "Administrative Reforms and Public Grievances - PG Division",
-     "received": 9919,
+     "received": 9934,
      "disposed": 9862,
-     "pct_disposed": 99.43,
+     "pct_disposed": 99.28,
      "pending": [
-      55,
+      70,
       2,
       0,
       0
@@ -2038,11 +2048,11 @@
     },
     {
      "name": "Ayush",
-     "received": 3498,
+     "received": 3509,
      "disposed": 3385,
-     "pct_disposed": 96.77,
+     "pct_disposed": 96.47,
      "pending": [
-      113,
+      124,
       0,
       0,
       0
@@ -2050,11 +2060,11 @@
     },
     {
      "name": "O/o the Comptroller & Auditor General of India",
-     "received": 2144,
+     "received": 2149,
      "disposed": 2046,
-     "pct_disposed": 95.43,
+     "pct_disposed": 95.21,
      "pending": [
-      78,
+      83,
       18,
       2,
       0
@@ -2062,23 +2072,23 @@
     },
     {
      "name": "Central Board of Direct Taxes (Income Tax)",
-     "received": 66424,
-     "disposed": 62896,
-     "pct_disposed": 94.69,
+     "received": 66486,
+     "disposed": 62919,
+     "pct_disposed": 94.63,
      "pending": [
-      2789,
-      573,
-      166,
+      2814,
+      581,
+      172,
       0
      ]
     },
     {
      "name": "Central Board of Excise and Customs",
-     "received": 14978,
-     "disposed": 14653,
-     "pct_disposed": 97.83,
+     "received": 14998,
+     "disposed": 14655,
+     "pct_disposed": 97.71,
      "pending": [
-      323,
+      341,
       1,
       1,
       0
@@ -2086,11 +2096,11 @@
     },
     {
      "name": "Atomic Energy",
-     "received": 1786,
+     "received": 1787,
      "disposed": 1732,
-     "pct_disposed": 96.98,
+     "pct_disposed": 96.92,
      "pending": [
-      54,
+      55,
       0,
       0,
       0
@@ -2110,11 +2120,11 @@
     },
     {
      "name": "Culture",
-     "received": 4333,
+     "received": 4346,
      "disposed": 4165,
-     "pct_disposed": 96.12,
+     "pct_disposed": 95.84,
      "pending": [
-      165,
+      178,
       3,
       0,
       0
@@ -2122,11 +2132,11 @@
     },
     {
      "name": "Corporate Affairs",
-     "received": 14928,
+     "received": 14946,
      "disposed": 14552,
-     "pct_disposed": 97.48,
+     "pct_disposed": 97.36,
      "pending": [
-      364,
+      382,
       12,
       0,
       0
@@ -2134,35 +2144,35 @@
     },
     {
      "name": "Ex Servicemen Welfare",
-     "received": 16644,
-     "disposed": 15516,
-     "pct_disposed": 93.22,
+     "received": 16665,
+     "disposed": 15520,
+     "pct_disposed": 93.13,
      "pending": [
-      1000,
-      127,
+      1016,
+      128,
       1,
       0
      ]
     },
     {
      "name": "Defence Production",
-     "received": 2492,
-     "disposed": 2338,
-     "pct_disposed": 93.82,
+     "received": 2493,
+     "disposed": 2340,
+     "pct_disposed": 93.86,
      "pending": [
-      147,
-      7,
+      145,
+      8,
       0,
       0
      ]
     },
     {
      "name": "Defence Research and Development",
-     "received": 1083,
+     "received": 1086,
      "disposed": 961,
-     "pct_disposed": 88.73,
+     "pct_disposed": 88.49,
      "pending": [
-      117,
+      120,
       5,
       0,
       0
@@ -2170,11 +2180,11 @@
     },
     {
      "name": "Financial Services (Banking Division)",
-     "received": 293074,
-     "disposed": 287164,
-     "pct_disposed": 97.98,
+     "received": 293653,
+     "disposed": 287250,
+     "pct_disposed": 97.82,
      "pending": [
-      5900,
+      6393,
       8,
       2,
       0
@@ -2182,11 +2192,11 @@
     },
     {
      "name": "Financial Services (Insurance Division)",
-     "received": 36348,
-     "disposed": 35685,
-     "pct_disposed": 98.18,
+     "received": 36449,
+     "disposed": 35699,
+     "pct_disposed": 97.94,
      "pending": [
-      660,
+      747,
       1,
       2,
       0
@@ -2194,11 +2204,11 @@
     },
     {
      "name": "Financial Services (Pension Reforms)",
-     "received": 4522,
+     "received": 4528,
      "disposed": 4480,
-     "pct_disposed": 99.07,
+     "pct_disposed": 98.94,
      "pending": [
-      41,
+      47,
       1,
       0,
       0
@@ -2206,11 +2216,11 @@
     },
     {
      "name": "Justice",
-     "received": 12771,
+     "received": 12804,
      "disposed": 12365,
-     "pct_disposed": 96.82,
+     "pct_disposed": 96.57,
      "pending": [
-      389,
+      422,
       8,
       9,
       0
@@ -2218,141 +2228,9 @@
     },
     {
      "name": "Fisheries",
-     "received": 652,
+     "received": 655,
      "disposed": 640,
-     "pct_disposed": 98.16,
-     "pending": [
-      12,
-      0,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Heavy Industry",
-     "received": 2181,
-     "disposed": 2164,
-     "pct_disposed": 99.22,
-     "pending": [
-      17,
-      0,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Health & Family Welfare",
-     "received": 66775,
-     "disposed": 65344,
-     "pct_disposed": 97.86,
-     "pending": [
-      1369,
-      50,
-      12,
-      0
-     ]
-    },
-    {
-     "name": "Health Research",
-     "received": 1435,
-     "disposed": 1410,
-     "pct_disposed": 98.26,
-     "pending": [
-      25,
-      0,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Legal Affairs",
-     "received": 5256,
-     "disposed": 5103,
-     "pct_disposed": 97.09,
-     "pending": [
-      147,
-      5,
-      1,
-      0
-     ]
-    },
-    {
-     "name": "Military Affairs",
-     "received": 28058,
-     "disposed": 26639,
-     "pct_disposed": 94.94,
-     "pending": [
-      1325,
-      94,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Agriculture and Farmers Welfare",
-     "received": 37067,
-     "disposed": 36702,
-     "pct_disposed": 99.02,
-     "pending": [
-      365,
-      0,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Animal Husbandry, Dairying",
-     "received": 3303,
-     "disposed": 3097,
-     "pct_disposed": 93.76,
-     "pending": [
-      190,
-      16,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Agriculture Research and Education",
-     "received": 1739,
-     "disposed": 1651,
-     "pct_disposed": 94.94,
-     "pending": [
-      83,
-      5,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Capital Development",
-     "received": 441,
-     "disposed": 222,
-     "pct_disposed": 50.34,
-     "pending": [
-      219,
-      0,
-      0,
-      0
-     ]
-    },
-    {
-     "name": "Consumer Affairs",
-     "received": 35516,
-     "disposed": 34997,
-     "pct_disposed": 98.54,
-     "pending": [
-      511,
-      7,
-      1,
-      0
-     ]
-    },
-    {
-     "name": "Earth Sciences",
-     "received": 354,
-     "disposed": 339,
-     "pct_disposed": 95.76,
+     "pct_disposed": 97.71,
      "pending": [
       15,
       0,
@@ -2361,12 +2239,144 @@
      ]
     },
     {
-     "name": "Commerce",
-     "received": 4541,
-     "disposed": 4399,
-     "pct_disposed": 96.87,
+     "name": "Heavy Industry",
+     "received": 2184,
+     "disposed": 2164,
+     "pct_disposed": 99.08,
      "pending": [
-      138,
+      20,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Health & Family Welfare",
+     "received": 66923,
+     "disposed": 65363,
+     "pct_disposed": 97.67,
+     "pending": [
+      1500,
+      48,
+      12,
+      0
+     ]
+    },
+    {
+     "name": "Health Research",
+     "received": 1438,
+     "disposed": 1410,
+     "pct_disposed": 98.05,
+     "pending": [
+      28,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Legal Affairs",
+     "received": 5262,
+     "disposed": 5103,
+     "pct_disposed": 96.98,
+     "pending": [
+      153,
+      5,
+      1,
+      0
+     ]
+    },
+    {
+     "name": "Military Affairs",
+     "received": 28069,
+     "disposed": 26649,
+     "pct_disposed": 94.94,
+     "pending": [
+      1324,
+      96,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Agriculture and Farmers Welfare",
+     "received": 37159,
+     "disposed": 36702,
+     "pct_disposed": 98.77,
+     "pending": [
+      457,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Animal Husbandry, Dairying",
+     "received": 3308,
+     "disposed": 3097,
+     "pct_disposed": 93.62,
+     "pending": [
+      195,
+      16,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Agriculture Research and Education",
+     "received": 1742,
+     "disposed": 1651,
+     "pct_disposed": 94.78,
+     "pending": [
+      85,
+      6,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Capital Development",
+     "received": 444,
+     "disposed": 222,
+     "pct_disposed": 50.0,
+     "pending": [
+      222,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Consumer Affairs",
+     "received": 35608,
+     "disposed": 34997,
+     "pct_disposed": 98.28,
+     "pending": [
+      603,
+      7,
+      1,
+      0
+     ]
+    },
+    {
+     "name": "Earth Sciences",
+     "received": 355,
+     "disposed": 339,
+     "pct_disposed": 95.49,
+     "pending": [
+      16,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Commerce",
+     "received": 4547,
+     "disposed": 4402,
+     "pct_disposed": 96.81,
+     "pending": [
+      141,
       4,
       0,
       0
@@ -2374,11 +2384,11 @@
     },
     {
      "name": "Chemicals and Petrochemicals",
-     "received": 1056,
+     "received": 1057,
      "disposed": 1050,
-     "pct_disposed": 99.43,
+     "pct_disposed": 99.34,
      "pending": [
-      6,
+      7,
       0,
       0,
       0
@@ -2386,11 +2396,11 @@
     },
     {
      "name": "Empowerment of Persons with Disabilities",
-     "received": 6002,
+     "received": 6012,
      "disposed": 5887,
-     "pct_disposed": 98.08,
+     "pct_disposed": 97.92,
      "pending": [
-      115,
+      125,
       0,
       0,
       0
@@ -2410,11 +2420,11 @@
     },
     {
      "name": "Drinking Water and Sanitation",
-     "received": 12681,
-     "disposed": 12171,
-     "pct_disposed": 95.98,
+     "received": 12713,
+     "disposed": 12173,
+     "pct_disposed": 95.75,
      "pending": [
-      462,
+      492,
       37,
       11,
       0
@@ -2422,37 +2432,37 @@
     },
     {
      "name": "Economic Affairs",
-     "received": 3599,
+     "received": 3604,
      "disposed": 3353,
-     "pct_disposed": 93.16,
+     "pct_disposed": 93.04,
      "pending": [
-      215,
-      27,
+      218,
+      29,
       4,
       0
      ]
     },
     {
      "name": "Expenditure",
-     "received": 2559,
+     "received": 2563,
      "disposed": 2436,
-     "pct_disposed": 95.19,
+     "pct_disposed": 95.04,
      "pending": [
-      121,
+      124,
       2,
-      0,
+      1,
       0
      ]
     },
     {
      "name": "Food and Public Distribution",
-     "received": 20628,
-     "disposed": 19420,
-     "pct_disposed": 94.14,
+     "received": 20685,
+     "disposed": 19453,
+     "pct_disposed": 94.04,
      "pending": [
-      872,
-      260,
-      76,
+      896,
+      258,
+      78,
       0
      ]
     },
@@ -2470,11 +2480,11 @@
     },
     {
      "name": "Fertilizers",
-     "received": 970,
+     "received": 973,
      "disposed": 883,
-     "pct_disposed": 91.03,
+     "pct_disposed": 90.75,
      "pending": [
-      87,
+      90,
       0,
       0,
       0
@@ -2482,11 +2492,11 @@
     },
     {
      "name": "Promotion of Industry and Internal Trade",
-     "received": 3150,
+     "received": 3156,
      "disposed": 2974,
-     "pct_disposed": 94.41,
+     "pct_disposed": 94.23,
      "pending": [
-      175,
+      181,
       1,
       0,
       0
@@ -2494,11 +2504,11 @@
     },
     {
      "name": "Land Resources",
-     "received": 7836,
+     "received": 7852,
      "disposed": 7788,
-     "pct_disposed": 99.39,
+     "pct_disposed": 99.18,
      "pending": [
-      48,
+      64,
       0,
       0,
       0
@@ -2518,23 +2528,23 @@
     },
     {
      "name": "Personnel and Training",
-     "received": 25318,
+     "received": 25374,
      "disposed": 24088,
-     "pct_disposed": 95.14,
+     "pct_disposed": 94.93,
      "pending": [
-      1079,
-      147,
+      1132,
+      150,
       4,
       0
      ]
     },
     {
      "name": "Rural Development",
-     "received": 73692,
+     "received": 73765,
      "disposed": 72709,
-     "pct_disposed": 98.67,
+     "pct_disposed": 98.57,
      "pending": [
-      978,
+      1051,
       5,
       0,
       0
@@ -2542,11 +2552,11 @@
     },
     {
      "name": "Revenue",
-     "received": 15961,
-     "disposed": 15662,
-     "pct_disposed": 98.13,
+     "received": 15991,
+     "disposed": 15667,
+     "pct_disposed": 97.97,
      "pending": [
-      280,
+      305,
       13,
       6,
       0
@@ -2554,11 +2564,11 @@
     },
     {
      "name": "Science and Technology",
-     "received": 1764,
+     "received": 1766,
      "disposed": 1707,
-     "pct_disposed": 96.77,
+     "pct_disposed": 96.66,
      "pending": [
-      57,
+      59,
       0,
       0,
       0
@@ -2566,23 +2576,23 @@
     },
     {
      "name": "School Education and Literacy",
-     "received": 27805,
+     "received": 27870,
      "disposed": 26693,
-     "pct_disposed": 96.0,
+     "pct_disposed": 95.78,
      "pending": [
-      1109,
-      3,
+      1172,
+      5,
       0,
       0
      ]
     },
     {
      "name": "Scientific & Industrial Research",
-     "received": 1072,
+     "received": 1075,
      "disposed": 1046,
-     "pct_disposed": 97.57,
+     "pct_disposed": 97.3,
      "pending": [
-      26,
+      29,
       0,
       0,
       0
@@ -2590,11 +2600,11 @@
     },
     {
      "name": "Skill Development and Entrepreneurship",
-     "received": 7408,
+     "received": 7415,
      "disposed": 7195,
-     "pct_disposed": 97.12,
+     "pct_disposed": 97.03,
      "pending": [
-      202,
+      209,
       10,
       1,
       0
@@ -2602,11 +2612,11 @@
     },
     {
      "name": "Telecommunications",
-     "received": 93021,
-     "disposed": 90628,
-     "pct_disposed": 97.43,
+     "received": 93234,
+     "disposed": 90763,
+     "pct_disposed": 97.35,
      "pending": [
-      2392,
+      2470,
       0,
       1,
       0
@@ -2614,11 +2624,11 @@
     },
     {
      "name": "Urban Development",
-     "received": 34478,
+     "received": 34526,
      "disposed": 33898,
-     "pct_disposed": 98.32,
+     "pct_disposed": 98.18,
      "pending": [
-      553,
+      601,
       21,
       6,
       0
@@ -2626,11 +2636,11 @@
     },
     {
      "name": "Women and Child Development",
-     "received": 12227,
-     "disposed": 11899,
-     "pct_disposed": 97.32,
+     "received": 12262,
+     "disposed": 11919,
+     "pct_disposed": 97.2,
      "pending": [
-      325,
+      340,
       3,
       0,
       0
@@ -2638,11 +2648,11 @@
     },
     {
      "name": "Pharmaceutical",
-     "received": 1590,
-     "disposed": 1526,
-     "pct_disposed": 95.97,
+     "received": 1591,
+     "disposed": 1525,
+     "pct_disposed": 95.85,
      "pending": [
-      63,
+      65,
       1,
       0,
       0
@@ -2650,11 +2660,11 @@
     },
     {
      "name": "NITI Aayog",
-     "received": 4283,
+     "received": 4295,
      "disposed": 4235,
-     "pct_disposed": 98.88,
+     "pct_disposed": 98.6,
      "pending": [
-      48,
+      60,
       0,
       0,
       0
@@ -2662,11 +2672,11 @@
     },
     {
      "name": "Posts",
-     "received": 74993,
-     "disposed": 74105,
-     "pct_disposed": 98.82,
+     "received": 75095,
+     "disposed": 74115,
+     "pct_disposed": 98.69,
      "pending": [
-      887,
+      979,
       1,
       0,
       0
@@ -2674,35 +2684,35 @@
     },
     {
      "name": "Public Enterprises",
-     "received": 837,
+     "received": 838,
      "disposed": 687,
-     "pct_disposed": 82.08,
+     "pct_disposed": 81.98,
      "pending": [
-      130,
-      16,
+      129,
+      18,
       4,
       0
      ]
     },
     {
      "name": "Higher Education",
-     "received": 39846,
-     "disposed": 37822,
-     "pct_disposed": 94.92,
+     "received": 39939,
+     "disposed": 37823,
+     "pct_disposed": 94.7,
      "pending": [
-      1746,
+      1836,
       233,
-      45,
+      47,
       0
      ]
     },
     {
      "name": "Space",
-     "received": 797,
+     "received": 800,
      "disposed": 745,
-     "pct_disposed": 93.48,
+     "pct_disposed": 93.13,
      "pending": [
-      52,
+      55,
       0,
       0,
       0
@@ -2710,11 +2720,11 @@
     },
     {
      "name": "Sports",
-     "received": 2234,
+     "received": 2240,
      "disposed": 2129,
-     "pct_disposed": 95.3,
+     "pct_disposed": 95.04,
      "pending": [
-      101,
+      107,
       4,
       0,
       0
@@ -2722,11 +2732,11 @@
     },
     {
      "name": "Tourism",
-     "received": 3420,
+     "received": 3426,
      "disposed": 3326,
-     "pct_disposed": 97.25,
+     "pct_disposed": 97.08,
      "pending": [
-      94,
+      100,
       0,
       0,
       0
@@ -2734,23 +2744,23 @@
     },
     {
      "name": "Defence Finance",
-     "received": 60244,
+     "received": 60332,
      "disposed": 55141,
-     "pct_disposed": 91.53,
+     "pct_disposed": 91.4,
      "pending": [
-      4180,
-      919,
+      4240,
+      947,
       4,
       0
      ]
     },
     {
      "name": "Official Language",
-     "received": 277,
+     "received": 278,
      "disposed": 272,
-     "pct_disposed": 98.19,
+     "pct_disposed": 97.84,
      "pending": [
-      5,
+      6,
       0,
       0,
       0
@@ -2758,11 +2768,11 @@
     },
     {
      "name": "Legislative Department",
-     "received": 1820,
+     "received": 1821,
      "disposed": 1802,
-     "pct_disposed": 99.01,
+     "pct_disposed": 98.96,
      "pending": [
-      18,
+      19,
       0,
       0,
       0
@@ -2770,11 +2780,11 @@
     },
     {
      "name": "Coal",
-     "received": 5869,
-     "disposed": 5683,
-     "pct_disposed": 96.83,
+     "received": 5873,
+     "disposed": 5686,
+     "pct_disposed": 96.82,
      "pending": [
-      186,
+      187,
       0,
       0,
       0
@@ -2782,35 +2792,35 @@
     },
     {
      "name": "External Affairs",
-     "received": 23779,
-     "disposed": 22768,
-     "pct_disposed": 95.75,
+     "received": 23825,
+     "disposed": 22777,
+     "pct_disposed": 95.6,
      "pending": [
-      970,
-      33,
-      8,
+      1007,
+      31,
+      10,
       0
      ]
     },
     {
      "name": "Home Affairs",
-     "received": 91561,
+     "received": 91761,
      "disposed": 87681,
-     "pct_disposed": 95.76,
+     "pct_disposed": 95.55,
      "pending": [
-      3716,
-      139,
-      25,
+      3909,
+      145,
+      26,
       0
      ]
     },
     {
      "name": "Electronics & Information Technology",
-     "received": 19542,
+     "received": 19579,
      "disposed": 18863,
-     "pct_disposed": 96.53,
+     "pct_disposed": 96.34,
      "pending": [
-      674,
+      711,
       5,
       0,
       0
@@ -2818,11 +2828,11 @@
     },
     {
      "name": "Parliamentary Affairs",
-     "received": 1946,
+     "received": 1947,
      "disposed": 1934,
-     "pct_disposed": 99.38,
+     "pct_disposed": 99.33,
      "pending": [
-      12,
+      13,
       0,
       0,
       0
@@ -2830,11 +2840,11 @@
     },
     {
      "name": "Water Resources, River Development & Ganga Rejuvenuation,",
-     "received": 4566,
+     "received": 4572,
      "disposed": 4374,
-     "pct_disposed": 95.8,
+     "pct_disposed": 95.67,
      "pending": [
-      190,
+      196,
       2,
       0,
       0
@@ -2842,11 +2852,11 @@
     },
     {
      "name": "Mines",
-     "received": 2039,
+     "received": 2043,
      "disposed": 1965,
-     "pct_disposed": 96.37,
+     "pct_disposed": 96.18,
      "pending": [
-      74,
+      78,
       0,
       0,
       0
@@ -2854,23 +2864,23 @@
     },
     {
      "name": "Micro Small and Medium Enterprises",
-     "received": 30886,
-     "disposed": 29759,
+     "received": 30914,
+     "disposed": 29786,
      "pct_disposed": 96.35,
      "pending": [
       1073,
-      49,
+      50,
       5,
       0
      ]
     },
     {
      "name": "Civil Aviation",
-     "received": 8672,
+     "received": 8718,
      "disposed": 8256,
-     "pct_disposed": 95.2,
+     "pct_disposed": 94.7,
      "pending": [
-      413,
+      459,
       3,
       0,
       0
@@ -2878,23 +2888,23 @@
     },
     {
      "name": "Cooperation",
-     "received": 10360,
+     "received": 10396,
      "disposed": 9735,
-     "pct_disposed": 93.97,
+     "pct_disposed": 93.64,
      "pending": [
-      588,
-      35,
+      622,
+      37,
       2,
       0
      ]
     },
     {
      "name": "Defence",
-     "received": 24048,
+     "received": 24083,
      "disposed": 23596,
-     "pct_disposed": 98.12,
+     "pct_disposed": 97.98,
      "pending": [
-      451,
+      486,
       1,
       0,
       0
@@ -2902,11 +2912,11 @@
     },
     {
      "name": "Environment, Forest and Climate Change",
-     "received": 10968,
-     "disposed": 10547,
-     "pct_disposed": 96.16,
+     "received": 10996,
+     "disposed": 10546,
+     "pct_disposed": 95.91,
      "pending": [
-      419,
+      448,
       2,
       0,
       0
@@ -2914,11 +2924,11 @@
     },
     {
      "name": "Information and Broadcasting",
-     "received": 5549,
-     "disposed": 5348,
-     "pct_disposed": 96.38,
+     "received": 5554,
+     "disposed": 5349,
+     "pct_disposed": 96.31,
      "pending": [
-      201,
+      205,
       0,
       0,
       0
@@ -2926,23 +2936,23 @@
     },
     {
      "name": "Labour and Employment",
-     "received": 331582,
-     "disposed": 315683,
-     "pct_disposed": 95.21,
+     "received": 332254,
+     "disposed": 315891,
+     "pct_disposed": 95.08,
      "pending": [
-      14808,
-      1033,
-      58,
+      15245,
+      1056,
+      62,
       0
      ]
     },
     {
      "name": "Minority Affairs",
-     "received": 2106,
+     "received": 2111,
      "disposed": 1955,
-     "pct_disposed": 92.83,
+     "pct_disposed": 92.61,
      "pending": [
-      148,
+      153,
       3,
       0,
       0
@@ -2950,11 +2960,11 @@
     },
     {
      "name": "New and Renewable Energy",
-     "received": 3900,
-     "disposed": 3676,
-     "pct_disposed": 94.26,
+     "received": 3904,
+     "disposed": 3709,
+     "pct_disposed": 95.01,
      "pending": [
-      222,
+      193,
       2,
       0,
       0
@@ -2962,47 +2972,47 @@
     },
     {
      "name": "Panchayati Raj",
-     "received": 22791,
-     "disposed": 20666,
-     "pct_disposed": 90.68,
+     "received": 22845,
+     "disposed": 20667,
+     "pct_disposed": 90.47,
      "pending": [
-      1484,
-      505,
-      136,
+      1517,
+      524,
+      137,
       0
      ]
     },
     {
      "name": "Railways, ( Railway Board)",
-     "received": 94263,
-     "disposed": 89696,
-     "pct_disposed": 95.16,
+     "received": 94460,
+     "disposed": 89712,
+     "pct_disposed": 94.97,
      "pending": [
-      4283,
-      236,
+      4455,
+      245,
       48,
       0
      ]
     },
     {
      "name": "Road Transport and Highways",
-     "received": 58437,
-     "disposed": 56913,
-     "pct_disposed": 97.39,
+     "received": 58553,
+     "disposed": 56910,
+     "pct_disposed": 97.19,
      "pending": [
-      1492,
-      27,
+      1606,
+      32,
       5,
       0
      ]
     },
     {
      "name": "Social Justice and Empowerment",
-     "received": 15076,
+     "received": 15103,
      "disposed": 14275,
-     "pct_disposed": 94.69,
+     "pct_disposed": 94.52,
      "pending": [
-      792,
+      819,
       9,
       0,
       0
@@ -3022,11 +3032,11 @@
     },
     {
      "name": "Steel",
-     "received": 1898,
-     "disposed": 1864,
-     "pct_disposed": 98.21,
+     "received": 1901,
+     "disposed": 1866,
+     "pct_disposed": 98.16,
      "pending": [
-      34,
+      35,
       0,
       0,
       0
@@ -3034,11 +3044,11 @@
     },
     {
      "name": "Youth Affairs",
-     "received": 1196,
+     "received": 1199,
      "disposed": 1168,
-     "pct_disposed": 97.66,
+     "pct_disposed": 97.41,
      "pending": [
-      28,
+      31,
       0,
       0,
       0
@@ -3046,23 +3056,23 @@
     },
     {
      "name": "Petroleum and Natural Gas",
-     "received": 76294,
+     "received": 76440,
      "disposed": 64649,
-     "pct_disposed": 84.74,
+     "pct_disposed": 84.57,
      "pending": [
-      6424,
-      5014,
-      207,
+      6432,
+      5146,
+      213,
       0
      ]
     },
     {
      "name": "Power",
-     "received": 14078,
-     "disposed": 13980,
-     "pct_disposed": 99.3,
+     "received": 14093,
+     "disposed": 13983,
+     "pct_disposed": 99.22,
      "pending": [
-      97,
+      109,
       1,
       0,
       0
@@ -3070,11 +3080,11 @@
     },
     {
      "name": "Shipping",
-     "received": 1918,
+     "received": 1922,
      "disposed": 1886,
-     "pct_disposed": 98.33,
+     "pct_disposed": 98.13,
      "pending": [
-      32,
+      36,
       0,
       0,
       0
@@ -3082,11 +3092,11 @@
     },
     {
      "name": "Tribal Affairs",
-     "received": 3002,
+     "received": 3008,
      "disposed": 2924,
-     "pct_disposed": 97.4,
+     "pct_disposed": 97.21,
      "pending": [
-      77,
+      83,
       1,
       0,
       0
@@ -3094,11 +3104,11 @@
     },
     {
      "name": "Textiles",
-     "received": 995,
+     "received": 997,
      "disposed": 977,
-     "pct_disposed": 98.19,
+     "pct_disposed": 97.99,
      "pending": [
-      18,
+      20,
       0,
       0,
       0
@@ -3106,12 +3116,12 @@
     },
     {
      "name": "Unique Identification Authority of India",
-     "received": 55243,
-     "disposed": 54021,
-     "pct_disposed": 97.79,
+     "received": 55355,
+     "disposed": 54023,
+     "pct_disposed": 97.59,
      "pending": [
-      1202,
-      20,
+      1307,
+      25,
       0,
       0
      ]
@@ -3120,36 +3130,36 @@
   },
   "states": {
    "total": {
-    "received": 955174,
-    "disposed": 778253,
-    "pct_disposed": 81.48,
+    "received": 956329,
+    "disposed": 778837,
+    "pct_disposed": 81.44,
     "pending": [
-     87071,
-     60731,
-     29119,
+     86787,
+     61211,
+     29494,
      0
     ]
    },
    "orgs": [
     {
      "name": "NCT of Delhi",
-     "received": 51990,
+     "received": 52038,
      "disposed": 47130,
-     "pct_disposed": 90.65,
+     "pct_disposed": 90.57,
      "pending": [
-      2550,
-      1569,
-      741,
+      2583,
+      1570,
+      755,
       0
      ]
     },
     {
      "name": "Union Territory of Andaman & Nicobar",
-     "received": 1296,
+     "received": 1298,
      "disposed": 1179,
-     "pct_disposed": 90.97,
+     "pct_disposed": 90.83,
      "pending": [
-      113,
+      115,
       4,
       0,
       0
@@ -3157,13 +3167,13 @@
     },
     {
      "name": "Andhra Pradesh",
-     "received": 19782,
-     "disposed": 14863,
-     "pct_disposed": 75.13,
+     "received": 19803,
+     "disposed": 14888,
+     "pct_disposed": 75.18,
      "pending": [
-      2152,
-      1992,
-      775,
+      2125,
+      2000,
+      790,
       0
      ]
     },
@@ -3173,67 +3183,67 @@
      "disposed": 263,
      "pct_disposed": 52.5,
      "pending": [
-      59,
-      131,
+      55,
+      135,
       48,
       0
      ]
     },
     {
      "name": "Assam",
-     "received": 9142,
+     "received": 9154,
      "disposed": 5603,
-     "pct_disposed": 61.29,
+     "pct_disposed": 61.21,
      "pending": [
-      1447,
-      1437,
-      655,
+      1448,
+      1438,
+      665,
       0
      ]
     },
     {
      "name": "Bihar",
-     "received": 45712,
-     "disposed": 33393,
-     "pct_disposed": 73.05,
+     "received": 45768,
+     "disposed": 33395,
+     "pct_disposed": 72.97,
      "pending": [
-      6977,
-      4028,
-      1314,
+      6932,
+      4118,
+      1323,
       0
      ]
     },
     {
      "name": "Union Territory of Chandigarh",
-     "received": 3740,
+     "received": 3744,
      "disposed": 3542,
-     "pct_disposed": 94.71,
+     "pct_disposed": 94.6,
      "pending": [
-      163,
-      27,
-      8,
+      167,
+      26,
+      9,
       0
      ]
     },
     {
      "name": "Chattisgarh",
-     "received": 13699,
+     "received": 13705,
      "disposed": 6134,
-     "pct_disposed": 44.78,
+     "pct_disposed": 44.76,
      "pending": [
-      2273,
-      3860,
-      1432,
+      2238,
+      3891,
+      1442,
       0
      ]
     },
     {
      "name": "Union Territory of Dadra & Nagar Haveli",
-     "received": 205,
+     "received": 206,
      "disposed": 77,
-     "pct_disposed": 37.56,
+     "pct_disposed": 37.38,
      "pending": [
-      37,
+      38,
       56,
       35,
       0
@@ -3245,105 +3255,105 @@
      "disposed": 102,
      "pct_disposed": 29.91,
      "pending": [
-      45,
+      43,
       100,
-      94,
+      96,
       0
      ]
     },
     {
      "name": "Gujarat",
-     "received": 63228,
-     "disposed": 57462,
-     "pct_disposed": 90.88,
+     "received": 63317,
+     "disposed": 57464,
+     "pct_disposed": 90.76,
      "pending": [
-      4602,
-      924,
-      240,
+      4670,
+      937,
+      246,
       0
      ]
     },
     {
      "name": "Goa",
-     "received": 1597,
+     "received": 1599,
      "disposed": 1102,
-     "pct_disposed": 69.0,
+     "pct_disposed": 68.92,
      "pending": [
-      176,
-      177,
-      142,
+      178,
+      173,
+      146,
       0
      ]
     },
     {
      "name": "Himachal Pradesh",
-     "received": 4389,
-     "disposed": 1269,
+     "received": 4393,
+     "disposed": 1270,
      "pct_disposed": 28.91,
      "pending": [
-      693,
-      1295,
-      1132,
+      681,
+      1299,
+      1143,
       0
      ]
     },
     {
      "name": "Haryana",
-     "received": 55843,
-     "disposed": 43739,
-     "pct_disposed": 78.32,
+     "received": 55924,
+     "disposed": 43863,
+     "pct_disposed": 78.43,
      "pending": [
-      6604,
-      3728,
-      1772,
+      6467,
+      3797,
+      1797,
       0
      ]
     },
     {
      "name": "Jharkhand",
-     "received": 21500,
-     "disposed": 18073,
-     "pct_disposed": 84.06,
+     "received": 21544,
+     "disposed": 18074,
+     "pct_disposed": 83.89,
      "pending": [
-      2343,
-      892,
-      192,
+      2362,
+      911,
+      197,
       0
      ]
     },
     {
      "name": "Union Territory of Jammu and Kashmir",
-     "received": 9618,
-     "disposed": 4587,
-     "pct_disposed": 47.69,
+     "received": 9626,
+     "disposed": 4588,
+     "pct_disposed": 47.66,
      "pending": [
-      1086,
-      2060,
-      1885,
+      1071,
+      2058,
+      1909,
       0
      ]
     },
     {
      "name": "Kerala",
-     "received": 7544,
+     "received": 7550,
      "disposed": 6382,
-     "pct_disposed": 84.6,
+     "pct_disposed": 84.53,
      "pending": [
-      508,
-      466,
-      188,
+      509,
+      467,
+      192,
       0
      ]
     },
     {
      "name": "Karnataka",
-     "received": 35335,
-     "disposed": 29010,
-     "pct_disposed": 82.1,
+     "received": 35346,
+     "disposed": 29022,
+     "pct_disposed": 82.11,
      "pending": [
-      2798,
-      2388,
-      1139,
+      2735,
+      2437,
+      1152,
       0
      ]
     },
@@ -3365,57 +3375,57 @@
      "disposed": 27,
      "pct_disposed": 19.71,
      "pending": [
-      17,
-      61,
-      32,
+      16,
+      60,
+      34,
       0
      ]
     },
     {
      "name": "Meghalaya",
-     "received": 290,
+     "received": 291,
      "disposed": 129,
-     "pct_disposed": 44.48,
+     "pct_disposed": 44.33,
      "pending": [
-      34,
-      76,
-      51,
+      35,
+      74,
+      53,
       0
      ]
     },
     {
      "name": "Maharashtra",
-     "received": 56095,
-     "disposed": 30582,
-     "pct_disposed": 54.52,
+     "received": 56139,
+     "disposed": 30616,
+     "pct_disposed": 54.54,
      "pending": [
-      9732,
-      10683,
-      5098,
+      9591,
+      10777,
+      5155,
       0
      ]
     },
     {
      "name": "Manipur",
-     "received": 805,
+     "received": 806,
      "disposed": 14,
      "pct_disposed": 1.74,
      "pending": [
-      213,
+      212,
       338,
-      240,
+      242,
       0
      ]
     },
     {
      "name": "Madhya Pradesh",
-     "received": 51001,
-     "disposed": 39835,
-     "pct_disposed": 78.11,
+     "received": 51049,
+     "disposed": 39857,
+     "pct_disposed": 78.08,
      "pending": [
-      6122,
-      3722,
-      1322,
+      6094,
+      3764,
+      1334,
       0
      ]
     },
@@ -3425,8 +3435,8 @@
      "disposed": 143,
      "pct_disposed": 76.06,
      "pending": [
-      35,
-      9,
+      34,
+      10,
       1,
       0
      ]
@@ -3437,56 +3447,56 @@
      "disposed": 52,
      "pct_disposed": 25.74,
      "pending": [
-      44,
-      54,
+      42,
+      56,
       52,
       0
      ]
     },
     {
      "name": "Odisha",
-     "received": 17956,
+     "received": 17968,
      "disposed": 11695,
-     "pct_disposed": 65.13,
+     "pct_disposed": 65.09,
      "pending": [
-      2709,
-      2473,
-      1079,
+      2689,
+      2495,
+      1089,
       0
      ]
     },
     {
      "name": "Punjab",
-     "received": 19910,
-     "disposed": 13192,
-     "pct_disposed": 66.26,
+     "received": 19930,
+     "disposed": 13194,
+     "pct_disposed": 66.2,
      "pending": [
-      2382,
-      2427,
-      1909,
+      2361,
+      2440,
+      1935,
       0
      ]
     },
     {
      "name": "Union Territory of Puducherry",
-     "received": 2203,
+     "received": 2205,
      "disposed": 1844,
-     "pct_disposed": 83.7,
+     "pct_disposed": 83.63,
      "pending": [
-      268,
-      72,
-      19,
+      267,
+      74,
+      20,
       0
      ]
     },
     {
      "name": "Rajasthan",
-     "received": 48860,
-     "disposed": 45625,
-     "pct_disposed": 93.38,
+     "received": 48917,
+     "disposed": 45758,
+     "pct_disposed": 93.54,
      "pending": [
-      2705,
-      253,
+      2633,
+      249,
       277,
       0
      ]
@@ -3505,11 +3515,11 @@
     },
     {
      "name": "Telangana",
-     "received": 12288,
+     "received": 12295,
      "disposed": 11927,
-     "pct_disposed": 97.06,
+     "pct_disposed": 97.01,
      "pending": [
-      346,
+      353,
       5,
       10,
       0
@@ -3517,61 +3527,61 @@
     },
     {
      "name": "Tamil Nadu",
-     "received": 30858,
-     "disposed": 26713,
-     "pct_disposed": 86.57,
+     "received": 30902,
+     "disposed": 26729,
+     "pct_disposed": 86.5,
      "pending": [
-      2737,
-      981,
-      427,
+      2746,
+      992,
+      435,
       0
      ]
     },
     {
      "name": "Tripura",
-     "received": 1847,
+     "received": 1850,
      "disposed": 1593,
-     "pct_disposed": 86.25,
+     "pct_disposed": 86.11,
      "pending": [
       101,
-      113,
+      116,
       40,
       0
      ]
     },
     {
      "name": "Uttarakhand",
-     "received": 15996,
-     "disposed": 14502,
-     "pct_disposed": 90.66,
+     "received": 16015,
+     "disposed": 14524,
+     "pct_disposed": 90.69,
      "pending": [
-      1137,
-      268,
+      1136,
+      266,
       89,
       0
      ]
     },
     {
      "name": "Uttar Pradesh",
-     "received": 324559,
-     "disposed": 302514,
-     "pct_disposed": 93.21,
+     "received": 325035,
+     "disposed": 302701,
+     "pct_disposed": 93.13,
      "pending": [
-      19357,
-      1609,
-      1079,
+      19632,
+      1616,
+      1086,
       0
      ]
     },
     {
      "name": "West Bengal",
-     "received": 26213,
+     "received": 26239,
      "disposed": 3709,
-     "pct_disposed": 14.15,
+     "pct_disposed": 14.14,
      "pending": [
-      4481,
-      12433,
-      5590,
+      4403,
+      12442,
+      5685,
       0
      ]
     }
@@ -3579,346 +3589,346 @@
   },
   "source": "DARPG, Centralized Public Grievance Redress and Monitoring System (CPGRAMS) dashboard",
   "source_url": "https://pgportal.gov.in/darpgdashboard",
-  "read_at": "2026-11-21T19:39:57+00:00"
+  "read_at": "2026-11-22T19:56:14+00:00"
  },
  "msme": {
   "states": [
    {
     "name": "Maharashtra",
-    "micro": 8328322,
+    "micro": 8330278,
     "small": 83774,
     "medium": 7931,
-    "udyam": 8420027,
-    "uap": 4251726,
-    "total": 12671753
+    "udyam": 8421983,
+    "uap": 4256305,
+    "total": 12678288
    },
    {
     "name": "Uttar Pradesh",
-    "micro": 5964830,
-    "small": 45541,
+    "micro": 5966892,
+    "small": 45542,
     "medium": 3069,
-    "udyam": 6013440,
-    "uap": 5862700,
-    "total": 11876140
+    "udyam": 6015503,
+    "uap": 5870330,
+    "total": 11885833
    },
    {
     "name": "Tamil Nadu",
-    "micro": 4778168,
+    "micro": 4778798,
     "small": 43054,
     "medium": 3196,
-    "udyam": 4824418,
-    "uap": 2871975,
-    "total": 7696393
+    "udyam": 4825048,
+    "uap": 2874342,
+    "total": 7699390
    },
    {
     "name": "Rajasthan",
-    "micro": 3631849,
+    "micro": 3632703,
     "small": 30068,
     "medium": 1884,
-    "udyam": 3663801,
-    "uap": 2248374,
-    "total": 5912175
+    "udyam": 3664655,
+    "uap": 2251385,
+    "total": 5916040
    },
    {
     "name": "Gujarat",
-    "micro": 3460683,
-    "small": 61445,
+    "micro": 3461238,
+    "small": 61446,
     "medium": 4928,
-    "udyam": 3527056,
-    "uap": 1930086,
-    "total": 5457142
+    "udyam": 3527612,
+    "uap": 1931994,
+    "total": 5459606
    },
    {
     "name": "Karnataka",
-    "micro": 3012296,
+    "micro": 3012852,
     "small": 34755,
     "medium": 2643,
-    "udyam": 3049694,
-    "uap": 3211432,
-    "total": 6261126
+    "udyam": 3050250,
+    "uap": 3214200,
+    "total": 6264450
    },
    {
     "name": "Madhya Pradesh",
-    "micro": 2836731,
-    "small": 22213,
+    "micro": 2837620,
+    "small": 22212,
     "medium": 1392,
-    "udyam": 2860336,
-    "uap": 3297482,
-    "total": 6157818
+    "udyam": 2861224,
+    "uap": 3301080,
+    "total": 6162304
    },
    {
     "name": "West Bengal",
-    "micro": 2679347,
-    "small": 27316,
-    "medium": 2009,
-    "udyam": 2708672,
-    "uap": 4134214,
-    "total": 6842886
+    "micro": 2681482,
+    "small": 27317,
+    "medium": 2010,
+    "udyam": 2710809,
+    "uap": 4137507,
+    "total": 6848316
    },
    {
     "name": "Telangana",
-    "micro": 2518870,
-    "small": 22634,
+    "micro": 2519589,
+    "small": 22636,
     "medium": 2016,
-    "udyam": 2543520,
-    "uap": 2610664,
-    "total": 5154184
+    "udyam": 2544241,
+    "uap": 2613098,
+    "total": 5157339
    },
    {
     "name": "Andhra Pradesh",
-    "micro": 2524099,
+    "micro": 2524528,
     "small": 18284,
     "medium": 1101,
-    "udyam": 2543484,
-    "uap": 2507977,
-    "total": 5051461
+    "udyam": 2543913,
+    "uap": 2510285,
+    "total": 5054198
    },
    {
     "name": "Bihar",
-    "micro": 2400152,
-    "small": 14004,
+    "micro": 2401295,
+    "small": 14005,
     "medium": 675,
-    "udyam": 2414831,
-    "uap": 3289036,
-    "total": 5703867
+    "udyam": 2415975,
+    "uap": 3292927,
+    "total": 5708902
    },
    {
     "name": "Punjab",
-    "micro": 1824342,
-    "small": 18880,
+    "micro": 1824591,
+    "small": 18881,
     "medium": 1405,
-    "udyam": 1844627,
-    "uap": 800572,
-    "total": 2645199
+    "udyam": 1844877,
+    "uap": 801381,
+    "total": 2646258
    },
    {
     "name": "Odisha",
-    "micro": 1820635,
-    "small": 11025,
+    "micro": 1822086,
+    "small": 11026,
     "medium": 656,
-    "udyam": 1832316,
-    "uap": 1483399,
-    "total": 3315715
+    "udyam": 1833768,
+    "uap": 1485445,
+    "total": 3319213
    },
    {
     "name": "Haryana",
-    "micro": 1627233,
+    "micro": 1627548,
     "small": 26038,
     "medium": 2041,
-    "udyam": 1655312,
-    "uap": 1089261,
-    "total": 2744573
+    "udyam": 1655627,
+    "uap": 1090699,
+    "total": 2746326
    },
    {
     "name": "Assam",
-    "micro": 1411126,
-    "small": 7232,
+    "micro": 1411962,
+    "small": 7231,
     "medium": 559,
-    "udyam": 1418917,
-    "uap": 836560,
-    "total": 2255477
+    "udyam": 1419752,
+    "uap": 838240,
+    "total": 2257992
    },
    {
     "name": "Kerala",
-    "micro": 1286993,
+    "micro": 1287153,
     "small": 13923,
     "medium": 871,
-    "udyam": 1301787,
-    "uap": 1108907,
-    "total": 2410694
+    "udyam": 1301947,
+    "uap": 1109946,
+    "total": 2411893
    },
    {
     "name": "Delhi",
-    "micro": 1235704,
+    "micro": 1236038,
     "small": 31838,
     "medium": 3212,
-    "udyam": 1270754,
-    "uap": 792763,
-    "total": 2063517
+    "udyam": 1271088,
+    "uap": 793817,
+    "total": 2064905
    },
    {
     "name": "Jharkhand",
-    "micro": 943102,
+    "micro": 943670,
     "small": 6608,
     "medium": 389,
-    "udyam": 950099,
-    "uap": 1075546,
-    "total": 2025645
+    "udyam": 950667,
+    "uap": 1076574,
+    "total": 2027241
    },
    {
     "name": "Chhattisgarh",
-    "micro": 858130,
+    "micro": 858445,
     "small": 9384,
     "medium": 803,
-    "udyam": 868317,
-    "uap": 853585,
-    "total": 1721902
+    "udyam": 868632,
+    "uap": 854481,
+    "total": 1723113
    },
    {
     "name": "Jammu and Kashmir",
-    "micro": 718937,
+    "micro": 719038,
     "small": 3558,
     "medium": 231,
-    "udyam": 722726,
-    "uap": 316930,
-    "total": 1039656
+    "udyam": 722827,
+    "uap": 317188,
+    "total": 1040015
    },
    {
     "name": "Uttarakhand",
-    "micro": 530564,
+    "micro": 530673,
     "small": 4705,
     "medium": 304,
-    "udyam": 535573,
-    "uap": 342318,
-    "total": 877891
+    "udyam": 535682,
+    "uap": 342660,
+    "total": 878342
    },
    {
     "name": "Himachal Pradesh",
-    "micro": 309835,
+    "micro": 309870,
     "small": 2857,
     "medium": 228,
-    "udyam": 312920,
-    "uap": 137915,
-    "total": 450835
+    "udyam": 312955,
+    "uap": 138147,
+    "total": 451102
    },
    {
     "name": "Manipur",
-    "micro": 157472,
+    "micro": 157567,
     "small": 445,
     "medium": 18,
-    "udyam": 157935,
-    "uap": 67782,
-    "total": 225717
+    "udyam": 158030,
+    "uap": 67808,
+    "total": 225838
    },
    {
     "name": "Tripura",
-    "micro": 150254,
+    "micro": 150352,
     "small": 794,
     "medium": 49,
-    "udyam": 151097,
-    "uap": 222319,
-    "total": 373416
+    "udyam": 151195,
+    "uap": 222402,
+    "total": 373597
    },
    {
     "name": "Goa",
-    "micro": 107333,
+    "micro": 107348,
     "small": 1233,
     "medium": 82,
-    "udyam": 108648,
-    "uap": 53495,
-    "total": 162143
+    "udyam": 108663,
+    "uap": 53534,
+    "total": 162197
    },
    {
     "name": "Chandigarh",
-    "micro": 75537,
+    "micro": 75555,
     "small": 1407,
     "medium": 139,
-    "udyam": 77083,
-    "uap": 39144,
-    "total": 116227
+    "udyam": 77101,
+    "uap": 39203,
+    "total": 116304
    },
    {
     "name": "Meghalaya",
-    "micro": 76317,
+    "micro": 76330,
     "small": 471,
     "medium": 31,
-    "udyam": 76819,
-    "uap": 33734,
-    "total": 110553
+    "udyam": 76832,
+    "uap": 33788,
+    "total": 110620
    },
    {
     "name": "Puducherry",
-    "micro": 74179,
+    "micro": 74189,
     "small": 713,
     "medium": 69,
-    "udyam": 74961,
-    "uap": 59831,
-    "total": 134792
+    "udyam": 74971,
+    "uap": 59875,
+    "total": 134846
    },
    {
     "name": "Nagaland",
-    "micro": 58833,
+    "micro": 58850,
     "small": 198,
     "medium": 12,
-    "udyam": 59043,
-    "uap": 34126,
-    "total": 93169
+    "udyam": 59060,
+    "uap": 34146,
+    "total": 93206
    },
    {
     "name": "Mizoram",
-    "micro": 44701,
+    "micro": 44718,
     "small": 218,
     "medium": 8,
-    "udyam": 44927,
-    "uap": 23970,
-    "total": 68897
+    "udyam": 44944,
+    "uap": 23993,
+    "total": 68937
    },
    {
     "name": "Arunachal Pradesh",
-    "micro": 39353,
+    "micro": 39366,
     "small": 428,
     "medium": 23,
-    "udyam": 39804,
-    "uap": 27259,
-    "total": 67063
+    "udyam": 39817,
+    "uap": 27287,
+    "total": 67104
    },
    {
     "name": "The Dadra and Nagar Haveli and Daman and Diu",
-    "micro": 31683,
+    "micro": 31687,
     "small": 982,
     "medium": 137,
-    "udyam": 32802,
-    "uap": 12012,
-    "total": 44814
+    "udyam": 32806,
+    "uap": 12027,
+    "total": 44833
    },
    {
     "name": "Sikkim",
-    "micro": 26371,
+    "micro": 26376,
     "small": 169,
     "medium": 17,
-    "udyam": 26557,
-    "uap": 18686,
-    "total": 45243
+    "udyam": 26562,
+    "uap": 18697,
+    "total": 45259
    },
    {
     "name": "Andaman and Nicobar Islands",
-    "micro": 21602,
+    "micro": 21609,
     "small": 180,
     "medium": 4,
-    "udyam": 21786,
-    "uap": 4732,
-    "total": 26518
+    "udyam": 21793,
+    "uap": 4739,
+    "total": 26532
    },
    {
     "name": "Ladakh",
-    "micro": 16939,
+    "micro": 16940,
     "small": 137,
     "medium": 4,
-    "udyam": 17080,
+    "udyam": 17081,
     "uap": 6151,
-    "total": 23231
+    "total": 23232
    },
    {
     "name": "Lakshadweep",
-    "micro": 1914,
+    "micro": 1916,
     "small": 1,
     "medium": 0,
-    "udyam": 1915,
+    "udyam": 1917,
     "uap": 933,
-    "total": 2848
+    "total": 2850
    }
   ],
   "total": {
-   "micro": 55584436,
-   "small": 546512,
-   "medium": 42136,
-   "udyam": 56173084,
-   "uap": 45657596,
-   "total": 101830680
+   "micro": 55601152,
+   "small": 546518,
+   "medium": 42137,
+   "udyam": 56189807,
+   "uap": 45706614,
+   "total": 101896421
   },
   "source": "Ministry of MSME dashboard, state-wise Udyam registration",
   "source_url": "https://dashboard.msme.gov.in/Udyam_Statewise.aspx",
-  "read_at": "2026-11-21T19:40:15+00:00",
+  "read_at": "2026-11-22T19:56:31+00:00",
   "history": [
    {
     "date": "2026-11-08",
@@ -3989,6 +3999,11 @@
     "date": "2026-11-21",
     "udyam": 56173084,
     "total": 101830680
+   },
+   {
+    "date": "2026-11-22",
+    "udyam": 56189807,
+    "total": 101896421
    }
   ]
  },
@@ -4107,7 +4122,7 @@
     "regulator": "SEBI",
     "date": "2026-08-27",
     "title": "Consultation paper on Exemption from the requirement of mandatory merchant banker appointment for Small-value debt through private placement by certain listed issuers",
-    "url": "https://www.sebi.gov.in/reports-and-statistics/reports/aug-2026/consultation-paper-on-exemption-from-the-requirement-of-mandatory-merchant-banker-appointment-for-small-value-debt-through-private-placement-by-certain-listed-issuers_104040.html",
+    "url": "https://www.sebi.gov.in/reports-and-statistics/reports/aug-2026/exemption-from-the-requirement-of-mandatory-merchant-banker-appointment-for-small-value-debt-through-private-placement-by-certain-listed-issuers_104040.html",
     "kind": "Consultation paper"
    },
    {
@@ -4377,7 +4392,7 @@
     "page": "https://irdai.gov.in/exposure-drafts"
    }
   },
-  "read_at": "2026-11-21T19:40:24+00:00"
+  "read_at": "2026-11-22T19:56:43+00:00"
  },
  "milestones": [
   {
